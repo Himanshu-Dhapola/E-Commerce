@@ -41,7 +41,7 @@ export function findProducts(productData) {
       }
       dispatch(setProducts(response.data.data.product));
     } catch (error) {
-      toast.error("No products found", {
+      toast.error(error.message, {
         style: {
           borderRadius: "10px",
           background: "#333",
@@ -92,7 +92,7 @@ export function searchProducts(searchProduct,navigate) {
       dispatch(setProducts(response.data.products));
       navigate(`/products/search/${searchProduct}`);
     } catch (error) {
-      toast.error("Cannot fetch the searched product", {
+      toast.error(error.message, {
         style: {
           borderRadius: "10px",
           background: "#333",
@@ -109,7 +109,6 @@ export function categorySearch(category, navigate) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
-    console.log(category);
     try {
       const response = await axiosInstance.get(
         `/api/v1/products/category/${category}`
@@ -122,7 +121,7 @@ export function categorySearch(category, navigate) {
       dispatch(setProducts(response.data.products));
       navigate(`/products/category/${category}`);
     } catch (error) {
-      toast.error("Cannot fetch the product category", {
+      toast.error(error.message, {
         style: {
           borderRadius: "10px",
           background: "#333",

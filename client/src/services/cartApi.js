@@ -43,7 +43,7 @@ export function addItemToCart(cartData) {
         },
       });
     } catch (error) {
-      toast.error("Product cannot to added to cart", {
+      toast.error(error.message, {
         style: {
           borderRadius: "10px",
           background: "#333",

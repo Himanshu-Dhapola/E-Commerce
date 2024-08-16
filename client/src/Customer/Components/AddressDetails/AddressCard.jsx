@@ -4,10 +4,12 @@ import { useNavigate } from "react-router";
 import { createOrder } from "../../../services/orderApi";
 
 export default function AddressCard({ address }) {
+  console.log(address);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleSubmit = () => {
     const customerAddress = {
+      id:address._id,
       firstName: address.firstName,
       lastName: address.lastName,
       streetAddress: address.streetAddress,

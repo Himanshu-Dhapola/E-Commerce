@@ -81,7 +81,7 @@ const addItemToCart = async (req, res) => {
     }).populate('product');
 
     if (isPresent) {
-      return res.status(400).json({
+      return res.status(200).json({
         success: false,
         message: 'Product already exists in the cart',
       });

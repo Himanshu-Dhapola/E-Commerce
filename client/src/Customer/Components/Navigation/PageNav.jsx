@@ -20,10 +20,9 @@ export default function PageNav() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    dispatch(searchProducts(values, navigate));
+    dispatch(searchProducts(values.trim(), navigate));
     setValues("");
   };
-
 
   const handleLogout = () => {
     localStorage.removeItem("accessToken");

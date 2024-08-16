@@ -106,7 +106,7 @@ const getAllProducts = async (req, res) => {
 
     // if (category) {
     //   const existsCategory = await Category.findOne({ name: category });
-    //   if (existsCategory) {
+    //   if (existsCategory) {  
     //     query = query.where('category').equals(existsCategory._id);
     //   } else {
     //     return res.status(201).json({
@@ -200,7 +200,6 @@ const searchProducts = async (req, res) => {
         { category: { $regex: keyword, $options: 'i' } },
       ],
     });
-
     return res
       .status(200)
       .json({ products, success: true, message: 'Searched products' });

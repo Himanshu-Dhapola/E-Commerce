@@ -19,7 +19,10 @@ export default function Success() {
           </p>
           <p className="text-black"> Have a great day! </p>
           <div className="py-10 text-center">
-            <Link to='/' className="px-12 bg-color hover:bg-color text-white font-semibold py-3">
+            <Link
+              to="/"
+              className="px-12 bg-color hover:bg-color text-white font-semibold py-3"
+            >
               GO BACK TO HOME
             </Link>
           </div>
