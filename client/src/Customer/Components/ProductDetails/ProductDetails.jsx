@@ -53,8 +53,8 @@ export default function ProductDetails() {
   return (
     <div className="bg-smoke font-Poppins">
       <PageNav />
-      <div className="pt-6 flex justify-center">
-        <div className="ml-10 mt-6 sm:px-6 w-1/3 rounded-lg lg:block ">
+      <div className="pt-6 flex flex-col md:flex-row justify-center items-center">
+        <div className="ml-10 mt-6 sm:px-6 w-1/3 rounded-lg lg:block">
           <img
             alt={product?.imageUrl}
             src={product?.imageUrl}

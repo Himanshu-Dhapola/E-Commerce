@@ -24,7 +24,7 @@ const HomePage = () => {
     <>
       <PageNav />
       <div className="bg-pearl font-Poppins">
-        <main className="w-full h-[600px] flex justify-center items-center">
+        <main className="w-full lg:h-[600px] flex justify-center items-center">
           <MainCarousel />
         </main>
       </div>

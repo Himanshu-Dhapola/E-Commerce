@@ -22,26 +22,31 @@ export default function CartItem({ item }) {
   };
 
   return (
-    <div className="p-5 shadow-lg border rounded-lg m-5 bg-white font-Poppins">
+    <div className="p-3 md:p-5 shadow-lg border rounded-lg m-5 bg-white font-Poppins">
       <div className="flex items-center">
-        <div className="w-[5rem] h-[5rem] lg:w-[9rem] lg:h-[9rem]">
+        <div className="w-[9rem] h-[9rem] lg:w-[9rem] lg:h-[9rem]">
           <img
             src={item.product?.imageUrl}
             alt=""
             className="w-full h-full object-contain object-center"
           />
         </div>
-        <div className="ml-5 space-y-1">
+        <div className="ml-5 space-y-1 text-[8px] sm:text-[10px] md:text-base">
           <p className="font-semibold">{item.product?.title}</p>
           <p className="font-semibold">{item.product?.description}</p>
-          <p>
+          <p className="text-[10px] md:text-base">
             Size: <span>{item.size}</span>,{" "}
-            <span className="uppercase">{item.product?.color}</span>
+            <span className="uppercase text-[10px] md:text-base">
+              {item.product?.color}
+            </span>
           </p>
           <p>
-            Brand: <span className="uppercase">{item.product?.brand}</span>
+            Brand:{" "}
+            <span className="uppercase text-[10px] md:text-base">
+              {item.product?.brand}
+            </span>
           </p>
-          <div className="text-lg tracking-tight flex justify-between space-x-8">
+          <div className="md:text-base text-[10px] tracking-tight flex justify-between space-x-8">
             <p className="text-black">&#8377;{item.price}</p>
             <p className="text-gray line-through">
               &#8377;{item.discountedPrice}
@@ -52,8 +57,8 @@ export default function CartItem({ item }) {
           </div>
         </div>
       </div>
-      <div className="lg:flex items-center lg:space-x-10 pt-4">
-        <div className=" flex items-center space-x-3 text-xl">
+      <div className="lg:flex items-center lg:space-x-10 md:pt-4">
+        <div className=" flex items-center space-x-3 text-[12px]  md:text-xl">
           <LuMinusCircle
             className=" text-blue cursor-pointer"
             onClick={() => handleCartItemQuantity(-1)}

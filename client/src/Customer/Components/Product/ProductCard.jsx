@@ -6,14 +6,14 @@ export default function ProductCard({ product }) {
   return (
     <div
       onClick={() => navigate(`/product/${product?._id}`)}
-      className="flex font-Poppins flex-col justify-center items-center shadow-lg rounded-2xl bg-white m-2 cursor-pointer transition-all duration-300 hover:scale-105"
+      className="flex font-Poppins md:flex-col justify-center items-center shadow-lg rounded-2xl bg-white m-2 cursor-pointer transition-all duration-300 hover:scale-105"
     >
       <div>
-        <img src={product.imageUrl} alt="" className="w-full p-2 h-72" />
+        <img src={product.imageUrl} alt="" className="w-full p-2 md:h-72" />
       </div>
-      <div className="flex flex-col font-semibold w-full p-3">
+      <div className="flex flex-col text-[12px] md:text-lg font-semibold w-full p-3">
         <p className="uppercase text-color font-semibold py-2">{product.brand}</p>
-        <p className=" break-words w-[215px] text-gray">
+        <p className=" break-words sm:w-[215px] text-gray">
           {product.description}
         </p>
         <div className="flex justify-between pt-4">

@@ -22,23 +22,29 @@ export default function Cart() {
   return (
     <div className="min-h-screen bg-smoke font-Poppins">
       <PageNav />
-      <div className="lg:grid grid-cols-3 lg:px-16 relative">
+      <div
+        className={
+          cart?.totalItem === 0
+            ? `-mt-[150px]`
+            : `lg:grid grid-cols-3 lg:px-16 px-4 relative`
+        }
+      >
         <div className="col-span-2">
           {cart?.cartItem.map((item, index) => (
             <CartItem key={index} item={item} />
           ))}
         </div>
         {cart?.totalItem === 0 ? (
-          <div className="flex flex-col w-full justify-center items-center min-h-screen -ml-[350px] -mt-[100px]">
-            <div className="w-[200x] h-[200px]">
+          <div className="flex flex-col w-full justify-center items-center min-h-screen">
+            <div className="w-[150x] h-[150px] md:w-[200px] md:h-[200px]">
               <PiShoppingCartDuotone className="w-full h-full" />
             </div>
-            <p className=" font-Poppins text-color font-semibold text-xl">
+            <p className=" font-Poppins text-color font-semibold text-lg md:text-xl mt-4">
               Cart is Empty
             </p>
           </div>
         ) : (
-          <div className="px-5 sticky top-0 h-[100h] mt-5 lg:mt-5">
+          <div className="px-4 md:px-5 sticky top-0 mt-5 md:mt-5">
             <div className="bg-white border rounded-lg p-3">
               <p className="text-black font-semibold">Price Details</p>
               <div>
@@ -64,7 +70,7 @@ export default function Cart() {
             </div>
             <button
               onClick={handleCheckout}
-              className="w-full bg-color mt-3 rounded-lg p-2 text-white font-semibold"
+              className="w-full bg-color my-3 rounded-lg p-2 text-white font-semibold"
             >
               CHECKOUT
             </button>

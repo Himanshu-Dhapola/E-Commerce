@@ -19,7 +19,7 @@ export default function CategoryItem({ item }) {
       <div className="z-10 absolute w-full h-full flex justify-center items-center bg-black/20 -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
         <p>{item.category}</p>
       </div>
-      <img src={item.image} alt="" className="w-[180px] h-[180px]" />
+      <img src={item.image} alt="" className="w-[120px] h-[120px] lg:w-[180px] lg:h-[180px]" />
     </div>
   );
 }
