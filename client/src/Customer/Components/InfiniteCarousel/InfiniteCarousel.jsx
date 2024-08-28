@@ -12,6 +12,9 @@ export default function InfiniteCarousel() {
           <img src="./apple.png " alt="Apple" width={100} />
         </li>
         <li>
+          <img src="./adidas.png" alt="Hp" width={100} />
+        </li>
+        <li>
           <img src="./sony.png" alt="Sony" width={100} />
         </li>
         <li>
@@ -39,6 +42,9 @@ export default function InfiniteCarousel() {
         </li>
         <li>
           <img src="./apple.png " alt="Apple" width={100} />
+        </li>
+        <li>
+          <img src="./adidas.png" alt="Hp" width={100} />
         </li>
         <li>
           <img src="./sony.png" alt="Sony" width={100} />

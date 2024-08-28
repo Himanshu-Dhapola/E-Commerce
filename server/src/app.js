@@ -17,11 +17,8 @@ import cartItemRouter from './routes/cartItem.routes.js';
 import customerProductRouter from './routes/customerProduct.routes.js';
 import adminProductRouter from './routes/adminProduct.routes.js';
 import orderRouter from './routes/customerOrder.routes.js';
-import reviewRouter from './routes/review.routes.js';
-import ratingRouter from './routes/rating.routes.js';
-import adminOrderRouter from './routes/adminOrder.routes.js'
-import paymentRouter from './routes/payment.routes.js'
-
+import adminOrderRouter from './routes/adminOrder.routes.js';
+import paymentRouter from './routes/payment.routes.js';
 
 app.use('/api/v1/customer', customerRouter);
 app.use('/api/v1/admin', adminRouter);
@@ -30,10 +27,7 @@ app.use('/api/v1/admin/products', adminProductRouter);
 app.use('/api/v1/cart', cartRouter);
 app.use('/api/v1/cart_items', cartItemRouter);
 app.use('/api/v1/order', orderRouter);
-app.use('/api/v1/reviews', reviewRouter);
-app.use('/api/v1/ratings', ratingRouter);
 app.use('/api/v1/admin/orders', adminOrderRouter);
 app.use('/api/v1/payment', paymentRouter);
-
 
 export { app };

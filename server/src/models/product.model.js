@@ -39,18 +39,6 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    rating: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Rating',
-      },
-    ],
-    review: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Review',
-      },
-    ],
     numRatings: {
       type: Number,
       default: 0,

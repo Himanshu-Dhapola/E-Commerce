@@ -11,18 +11,22 @@ export default function ProductCard({ product }) {
       <div>
         <img src={product.imageUrl} alt="" className="w-full p-2 md:h-72" />
       </div>
-      <div className="flex flex-col text-[12px] md:text-lg font-semibold w-full p-3">
-        <p className="uppercase text-color font-semibold py-2">{product.brand}</p>
+      <div className="flex flex-col text-[12px] md:text-base w-full p-3">
+        <p className="uppercase text-color font-semibold py-2">
+          {product.brand}
+        </p>
         <p className=" break-words sm:w-[215px] text-gray">
           {product.description}
         </p>
-        <div className="flex justify-between pt-4">
-          <p className="text-black text-sm">&#8377;{product.price}</p>
-          <p className="text-sm line-through text-lightgray">
+        <div className="flex font-semibold justify-between pt-4">
+          <p className="text-black text-sm md:text-lg">
             &#8377;{product.discountedPrice}
           </p>
-          <p className="text-sm text-green">
-            &#8377;{product.discountPercentage}% off
+          <p className="text-sm md:text-lg line-through text-lightgray">
+            &#8377;{product.price}
+          </p>
+          <p className="text-sm md:text-lg text-green">
+            {product.discountPercentage}% off
           </p>
         </div>
       </div>

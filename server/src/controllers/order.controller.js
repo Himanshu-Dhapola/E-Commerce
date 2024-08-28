@@ -52,8 +52,8 @@ const createOrder = async (req, res) => {
       });
       const createdOrderItem = await orderItem.save();
       orderItems.push(createdOrderItem);
-      totalPrice += item.price * item.quantity;
-      totalDiscountedPrice += item.discountedPrice * item.quantity;
+      totalPrice += item.price;
+      totalDiscountedPrice += item.discountedPrice;
       totalItem += item.quantity;
     }
 

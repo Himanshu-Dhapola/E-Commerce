@@ -48,18 +48,6 @@ const customerSchema = new mongoose.Schema(
         ref: 'Payment',
       },
     ],
-    rating: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Rating',
-      },
-    ],
-    review: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Review',
-      },
-    ],
   },
   { timestamps: true }
 );

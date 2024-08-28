@@ -1,6 +1,11 @@
 import { axiosInstance } from "../axios/axiosInstance";
 import { toast } from "react-hot-toast";
-import { setCart, setCartItems, setLoading } from "../Feature/Slices/cartSlice";
+import {
+  setCart,
+  setCartItems,
+  setLoading,
+  clearCart,
+} from "../Feature/Slices/cartSlice";
 
 export function getCartItem() {
   return async (dispatch) => {
@@ -60,7 +65,7 @@ export function removeCartItem(cartItemId) {
   return async (dispatch) => {
     try {
       const response = await axiosInstance.delete(
-        `/api/v1/cart_items/${cartItemId}`,
+        `/api/v1/cart_items/${cartItemId}`
       );
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -91,7 +96,7 @@ export function updateCartItem(cartData) {
     try {
       const response = await axiosInstance.put(
         `/api/v1/cart_items/${cartData.cartItemId}`,
-        cartData,
+        cartData
       );
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -99,6 +104,26 @@ export function updateCartItem(cartData) {
       dispatch(getCartItem());
     } catch (error) {
       toast.error("Something went wrong while updating the item", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+    }
+  };
+}
+
+export function emptyCart() {
+  return async (dispatch) => {
+    try {
+      const response = await axiosInstance.post(`/api/v1/cart/empty-cart`);
+      if (!response.data.success) {
+        throw new Error(response.data.message);
+      }
+      dispatch(clearCart());
+    } catch (error) {
+      toast.error("Error Emptying the Cart", {
         style: {
           borderRadius: "10px",
           background: "#333",

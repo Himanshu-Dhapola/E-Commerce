@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router";
-import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartItem } from "../../../services/cartApi";
 import { useEffect } from "react";
 import { PiShoppingCartDuotone } from "react-icons/pi";
 import PageNav from "../Navigation/PageNav";
+import CartItem from "./CartItem";
 
 export default function Cart() {
   const navigate = useNavigate();
@@ -60,7 +60,7 @@ export default function Cart() {
                   <span>Delivery Charge</span>
                   <span className="text-blue">Free</span>
                 </div>
-                <div className="flex justify-between pt-3 text-black">
+                <div className="flex justify-between font-semibold pt-3 text-black">
                   <span>Total Amount</span>
                   <span className="text-green">
                     &#8377;{cart?.totalDiscountedPrice}

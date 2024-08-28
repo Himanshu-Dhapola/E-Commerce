@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
-import AddressCard from "../AddressDetails/AddressCard";
-import CartItem from "./CartItem";
 import { useEffect } from "react";
 import { getOrderById } from "../../../services/orderApi";
 import { useLocation } from "react-router";
 import { useSelector } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
 import { axiosInstance } from "../../../axios/axiosInstance";
+import AddressCard from "../AddressDetails/AddressCard";
+import CartItem from "./CartItem";
 
 export default function OrderSummary() {
   const dispatch = useDispatch();
@@ -36,7 +36,7 @@ export default function OrderSummary() {
   };
 
   return (
-    <div className="space-y-5 font-Poppins">
+    <div className="space-y-5 pb-5 font-Poppins">
       <div>
         <AddressCard address={order?.shippingAddress} />
       </div>
@@ -58,17 +58,17 @@ export default function OrderSummary() {
                   </div>
                   <div className="flex justify-between pt-3 text-black">
                     <span>Discount</span>
-                    <span className="text-blue">
-                      -&#8377;{order?.totalDiscountedPrice}
-                    </span>
+                    <span className="text-blue">-&#8377;{order?.discount}</span>
                   </div>
                   <div className="flex justify-between pt-3 text-black">
                     <span>Delivery Charge</span>
                     <span className="text-blue">Free</span>
                   </div>
-                  <div className="flex justify-between pt-3 text-black">
+                  <div className="flex justify-between font-semibold pt-3 text-black">
                     <span>Total Amount</span>
-                    <span className="text-green">&#8377;{order?.discount}</span>
+                    <span className="text-green">
+                      &#8377;{order?.totalDiscountedPrice}
+                    </span>
                   </div>
                 </div>
               </div>

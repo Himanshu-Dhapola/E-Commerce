@@ -4,11 +4,11 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import DeliveryAddressForm from "../Cart/DeliveryAddressForm";
 import OrderSummary from "../Cart/OrderSummary";
 import PageNav from "../Navigation/PageNav";
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const steps = ["Login", "Add Delivery Address", "Order Summary", "Payment"];
 
@@ -21,10 +21,29 @@ export default function Checkout() {
 
   return (
     <>
-     <PageNav/>
-      <div className="px-10 lg:p-10 bg-smoke min-h-screen font-Poppins">
-        <Box sx={{ width: "100%" }}>
-          <Stepper activeStep={step} className="pb-10">
+      <PageNav />
+      <div className="px-2 pt-5 sm:px-10 lg:p-10 bg-smoke min-h-screen font-Poppins">
+        <Box
+          sx={{
+            width: {
+              xs: "100%",
+              lg: "100%", 
+            },
+            mx: "auto",
+          }}
+        >
+          <Stepper
+            activeStep={step}
+            sx={{
+              pb: 3,
+              "& .MuiStepLabel-label": {
+                fontSize: {
+                  xs: "0.60rem",
+                  sm: "1rem",
+                },
+              },
+            }}
+          >
             {steps.map((label, index) => {
               const stepProps = {};
               const labelProps = {};
@@ -37,15 +56,31 @@ export default function Checkout() {
           </Stepper>
           {activeStep === steps.length ? (
             <React.Fragment>
-              <Typography sx={{ mt: 2, mb: 1 }}>
+              <Typography
+                sx={{
+                  mt: 2,
+                  mb: 1,
+                  fontSize: {
+                    xs: "0.6rem",
+                    sm: "1rem",
+                  },
+                }}
+              >
                 All steps completed - you&apos;re finished
               </Typography>
             </React.Fragment>
           ) : (
             <React.Fragment>
-              <div>
+              <Box
+                sx={{
+                  fontSize: {
+                    xs: "0.75em",
+                    sm: "1rem",
+                  },
+                }}
+              >
                 {step == 2 ? <DeliveryAddressForm /> : <OrderSummary />}
-              </div>
+              </Box>
             </React.Fragment>
           )}
         </Box>

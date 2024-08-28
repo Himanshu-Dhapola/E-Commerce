@@ -1,11 +1,11 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { MdOutlineSearch, MdMenu, MdClose } from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
-import Logo from "./Logo";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProducts } from "../../../services/productApi";
 import Cookies from "js-cookie";
+import Logo from "./Logo";
 
 export default function PageNav() {
   const dispatch = useDispatch();
@@ -19,10 +19,18 @@ export default function PageNav() {
     setValues(() => e.target.value);
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    dispatch(searchProducts(values.trim(), navigate));
-    setValues("");
+  const handleSearch = () => {
+    if (values.trim()) {
+      dispatch(searchProducts(values.trim(), navigate));
+      setValues("");
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSearch();
+    }
   };
 
   const handleLogout = () => {
@@ -40,6 +48,7 @@ export default function PageNav() {
       secure: true,
     });
     navigate("/");
+    window.location.reload();
   };
 
   const toggleMenu = () => {
@@ -75,6 +84,7 @@ export default function PageNav() {
           name="search"
           value={values}
           onChange={handleChange}
+          onKeyDown={handleKeyDown}
           placeholder="Search"
           className="placeholder:text-gray block bg-white w-[200px] sm:w-[250px] md:w-[350px] lg:w-[500px] h-8 sm:h-8 md:h-10 border border-gray rounded-lg pl-5 focus:ring-color focus:border-color pr-3 shadow-sm focus:outline-none self-center"
         />
@@ -84,9 +94,9 @@ export default function PageNav() {
         />
       </form>
 
-      <div className="flex items-center gap-2 md:hidden">
+      <div className="flex items-center justify-center gap-1 md:hidden">
         {customer !== null ? (
-          <div className="bg-color rounded-full text-white font-semibold w-8 h-8 flex justify-center items-center mb-4">
+          <div className="bg-color rounded-full mt-4 text-white font-semibold w-8 h-8 flex justify-center items-center mb-4">
             <p>{customer?.firstName[0].toUpperCase()}</p>
           </div>
         ) : (
@@ -106,12 +116,12 @@ export default function PageNav() {
               <p>{customer.firstName[0].toUpperCase()}</p>
             </div>
             <NavLink to="/cart" className="relative">
-              <FaShoppingCart className="w-7 h-7 text-white cursor-pointer hover:text-color transition ease-in duration-300" />
+              <FaShoppingCart className="w-7 h-7 text-white cursor-pointer hover:text-color transition ease-linear duration-100" />
             </NavLink>
             <button
               type="submit"
               onClick={handleLogout}
-              className="text-white w-16 py-2 rounded-lg text-md font-semibold hover:text-color transition ease-in duration-100 uppercase"
+              className="text-white w-16 py-2 rounded-lg text-md font-semibold hover:text-color transition ease-linear duration-100 uppercase"
             >
               Logout
             </button>
@@ -119,12 +129,12 @@ export default function PageNav() {
         ) : (
           <div className="space-x-4">
             <NavLink to="/signup">
-              <button className="text-white w-16 py-2 rounded-lg text-md font-semibold hover:text-color transition ease-in duration-100 uppercase">
+              <button className="text-white w-16 py-2 rounded-lg text-md font-semibold hover:text-color transition ease-linear duration-100 uppercase">
                 Signup
               </button>
             </NavLink>
             <NavLink to="/login">
-              <button className="text-white w-16 py-2 rounded-lg text-md font-semibold hover:text-color transition ease-in duration-100 uppercase">
+              <button className="text-white w-16 py-2 rounded-lg text-md font-semibold hover:text-color transition ease-linear duration-100 uppercase">
                 Login
               </button>
             </NavLink>

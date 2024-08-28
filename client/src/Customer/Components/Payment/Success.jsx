@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { emptyCart } from "../../../services/cartApi";
 
 export default function Success() {
+  const dispatch = useDispatch();
+  const handleCart = () => {
+    dispatch(emptyCart());
+  };
+
   return (
     <div className="min-h-screen font-Poppins">
       <div className="bg-white p-6  md:mx-auto">
@@ -20,6 +27,7 @@ export default function Success() {
           <p className="text-black"> Have a great day! </p>
           <div className="py-10 text-center">
             <Link
+              onClick={handleCart}
               to="/"
               className="px-12 bg-color hover:bg-color text-white font-semibold py-3"
             >

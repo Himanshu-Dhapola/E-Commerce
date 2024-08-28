@@ -1,12 +1,17 @@
+import PropTypes from "prop-types";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { LuPlusCircle } from "react-icons/lu";
 import { LuMinusCircle } from "react-icons/lu";
-import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router";
 import { removeCartItem, updateCartItem } from "../../../services/cartApi";
-
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  const querySearch = new URLSearchParams(location.search);
+  const step = querySearch.get("step");
+
   const handleCartItemQuantity = (num) => {
     const data = {
       quantity: item.quantity + num,
@@ -33,7 +38,7 @@ export default function CartItem({ item }) {
         </div>
         <div className="ml-5 space-y-1 text-[8px] sm:text-[10px] md:text-base">
           <p className="font-semibold">{item.product?.title}</p>
-          <p className="font-semibold">{item.product?.description}</p>
+          <p className>{item.product?.description}</p>
           <p className="text-[10px] md:text-base">
             Size: <span>{item.size}</span>,{" "}
             <span className="uppercase text-[10px] md:text-base">
@@ -46,34 +51,42 @@ export default function CartItem({ item }) {
               {item.product?.brand}
             </span>
           </p>
-          <div className="md:text-base text-[10px] tracking-tight flex justify-between space-x-8">
-            <p className="text-black">&#8377;{item.price}</p>
-            <p className="text-gray line-through">
-              &#8377;{item.discountedPrice}
-            </p>
+          <div className="md:text-base text-[10px] font-semibold tracking-tight flex justify-between space-x-8">
+            <p className="text-black">&#8377;{item.discountedPrice}</p>
+            <p className="text-gray line-through">&#8377;{item.price}</p>
             <p className="text-green">
-              &#8377;{item.product?.discountPercentage} off
+              {item.product?.discountPercentage}% off
             </p>
           </div>
         </div>
       </div>
-      <div className="lg:flex items-center lg:space-x-10 md:pt-4">
-        <div className=" flex items-center space-x-3 text-[12px]  md:text-xl">
-          <LuMinusCircle
-            className=" text-blue cursor-pointer"
-            onClick={() => handleCartItemQuantity(-1)}
-            disabled={item.quantity <= 1}
-          />
-          <span className="border px-4 rounded-md">{item.quantity}</span>
-          <LuPlusCircle
-            className="text-blue cursor-pointer"
-            onClick={() => handleCartItemQuantity(1)}
-            disabled={item.quantity <= 1}
-          />
-          <RiDeleteBin6Line
-            className="text-color cursor-pointer"
-            onClick={handleRemoveCartItem}
-          />
+      <div className="flex flex-col items-start md:flex-row md:items-start md:space-x-4 pt-3">
+        <div className="flex items-center space-x-2 text-[12px] md:text-xl">
+          {step !== "3" && (
+            <>
+              <LuMinusCircle
+                className="text-blue cursor-pointer"
+                onClick={() => handleCartItemQuantity(-1)}
+                disabled={item.quantity <= 1}
+              />
+              <span className="border font-semibold px-4 rounded-md text-center">
+                {item.quantity}
+              </span>
+              <LuPlusCircle
+                className="text-blue cursor-pointer"
+                onClick={() => handleCartItemQuantity(1)}
+              />
+              <RiDeleteBin6Line
+                className="text-color cursor-pointer text-[12px] md:text-xl"
+                onClick={handleRemoveCartItem}
+              />
+            </>
+          )}
+          {step === "3" && (
+            <span className="border font-semibold px-4 rounded-md text-center">
+              Quantity: {item.quantity}
+            </span>
+          )}
         </div>
       </div>
     </div>

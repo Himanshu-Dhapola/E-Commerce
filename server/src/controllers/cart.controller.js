@@ -34,9 +34,9 @@ const findCustomerCart = async (req, res) => {
     }
 
     cart.totalPrice = totalPrice;
-    cart.discount = totalDiscountPrice;
+    cart.discount = totalPrice - totalDiscountPrice;;
     cart.totalItem = totalItem;
-    cart.totalDiscountedPrice = totalPrice - totalDiscountPrice;
+    cart.totalDiscountedPrice = totalDiscountPrice;
 
     return res
       .status(200)
@@ -114,4 +114,36 @@ const addItemToCart = async (req, res) => {
   }
 };
 
-export { findCustomerCart, addItemToCart };
+const emptyCart = async (req, res) => {
+  try {
+    const customerId = req.customer._id;
+
+    const cart = await Cart.findOne({ customer: customerId });
+    if (!cart) {
+      return res
+        .status(404)
+        .json({ success: false, message: 'Cart not found' });
+    }
+
+    await CartItem.deleteMany({ cart: cart._id });
+
+    cart.cartItem = [];
+    cart.totalPrice = 0;
+    cart.totalItem = 0;
+    cart.totalDiscountedPrice = 0;
+    cart.discount = 0;
+
+    await cart.save();
+
+    return res
+      .status(200)
+      .json({ success: true, message: 'Cart Emptied Successfully' });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: 'Error Emptying the Cart',
+    });
+  }
+};
+
+export { findCustomerCart, addItemToCart, emptyCart };

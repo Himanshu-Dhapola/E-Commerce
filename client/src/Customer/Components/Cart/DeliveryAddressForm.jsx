@@ -44,13 +44,13 @@ export default function DeliveryAddressForm() {
   };
 
   return (
-    <div className="w-full flex bg-smoke gap-x-10 font-Poppins">
-      <div className="w-1/2 border p-2 scroll-smooth overflow-scroll h-80 rounded-md space-y-3">
+    <div className="w-full flex flex-col md:flex-row pb-5 bg-smoke gap-y-5 md:gap-x-10 font-Poppins">
+      <div className="w-full md:w-1/2 border p-2 scroll-smooth overflow-scroll h-64 md:h-80 rounded-md space-y-3">
         {customer?.address?.map((address, index) => (
           <AddressCard address={address} key={index} />
         ))}
       </div>
-      <form className=" w-1/2 space-y-5" onSubmit={handleAddress}>
+      <form className=" w-full md:w-1/2 space-y-5" onSubmit={handleAddress}>
         <div className="flex space-x-5">
           <input
             type="text"
@@ -116,7 +116,7 @@ export default function DeliveryAddressForm() {
         </div>
         <button
           type="submit"
-          className="w-full bg-color mt-3 rounded-md p-2 text-white font-semibold"
+          className="w-full bg-color mt-3 uppercase rounded-md p-2 text-white font-semibold"
         >
           Deliver Here
         </button>

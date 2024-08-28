@@ -5,7 +5,7 @@ export default function Category() {
   return (
     <div className="flex flex-col gap-4 py-10 font-Poppins">
       <div className="flex justify-center items-center">
-        <h2 className="px-12 font-semibold text-lg md:text-2xl text-color">
+        <h2 className="px-12 font-semibold uppercase text-lg md:text-2xl text-color">
           Categories
         </h2>
       </div>

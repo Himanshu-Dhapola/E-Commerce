@@ -100,7 +100,7 @@ export default function Signup() {
         </form>
         <button
           onClick={handleRegister}
-          className="bg-color text-white w-[280px] md:w-[350px] px-8 md:py-3 py-2 mt-4 md:mt-8 rounded-lg text-xl font-semibold transition-all duration-300 hover:scale-105"
+          className="bg-color text-white w-[280px] md:w-[350px] px-8 md:py-3 py-2 mt-4 md:mt-8 rounded-lg text-xl font-semibold hover:scale-110 transition-all ease-in duration-200"
         >
           Signup
         </button>
