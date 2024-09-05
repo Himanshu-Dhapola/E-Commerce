@@ -45,7 +45,7 @@ export default function ProductDetails() {
     const fetchRecommendations = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/recommend/${id.productId}`
+          `https://easby-recommendation.onrender.com/recommend/${id.productId}`
         );
         setRecommendedProducts(response.data);
       } catch (error) {
