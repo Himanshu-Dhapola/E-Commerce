@@ -64,7 +64,7 @@ export default function CartItem({ item }) {
           <p className="font-semibold">{item.product?.title}</p>
           <p>{truncateDescription(item.product?.description)}</p>
           <p className="text-[10px] md:text-base">
-            Size: <span>{item.size}</span>{" "}
+            Size/Variety: <span>{item.size}</span>{" "}
             <span className="uppercase text-[10px] md:text-base">
               {item.product?.color}
             </span>

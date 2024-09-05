@@ -68,7 +68,7 @@ export default function ProductDetails() {
           }`}
         >
           <div className="text-white bg-[#333] p-3 rounded-lg shadow-lg mt-2 transition-opacity duration-300">
-            <p className="text-xl font-semibold">Select a Size</p>
+            <p className="text-lg font-semibold">Select a Size/Model</p>
           </div>
         </div>
       )}
@@ -121,7 +121,7 @@ export default function ProductDetails() {
               <div className="mt-3">
                 <div className="flex items-center justify-between">
                   <h3 className="md:text-lg text-sm font-medium text-gray">
-                    Size:
+                    Size/Variety:
                   </h3>
                 </div>
 
@@ -162,14 +162,16 @@ export default function ProductDetails() {
         </div>
       </div>
 
-      <div className="bg-smoke mx-auto max-w-full px-4 pb-10">
-        <h1 className="text-2xl md:text-3xl font-bold pt-10 pl-10 my-6 tracking-tight text-color">
-          Similar Products
-        </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-4 space-y-6">
-          {recommendedProducts.map((item, index) => (
-            <ProductCard product={item} key={index} />
-          ))}
+      <div className="grid grid-cols-1 bg-smoke gap-y-10 pb-10">
+        <div className="lg:col-span-3 w-full">
+          <h1 className="text-2xl md:text-3xl font-bold pt-10 pl-10 my-6 tracking-tight text-color">
+            Similar Products
+          </h1>
+          <div className="flex flex-wrap justify-center py-5">
+            {recommendedProducts.map((item, index) => (
+              <ProductCard product={item} key={index} />
+            ))}
+          </div>
         </div>
       </div>
       <Footer />

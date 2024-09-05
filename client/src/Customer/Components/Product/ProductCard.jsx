@@ -20,7 +20,7 @@ export default function ProductCard({ product }) {
   return (
     <div
       onClick={() => navigate(`/product/${product?._id}`)}
-      className="flex font-Poppins lg:flex-col justify-center items-center shadow-lg rounded-2xl bg-white m-2 cursor-pointer transition-all duration-300 hover:scale-105"
+      className="flex font-Poppins lg:flex-col justify-center items-center border  shadow-lg rounded-2xl bg-white m-2 cursor-pointer transition-all duration-300 hover:scale-105"
     >
       <div className="w-[220px] h-[220px] flex justify-center items-center">
         <img src={product.imageUrl} alt="" className="w-full pt-2 pl-2 pr-2" />
@@ -29,7 +29,7 @@ export default function ProductCard({ product }) {
         <p className="uppercase text-color font-semibold py-2">
           {product.brand}
         </p>
-        <p className="break-words lg:w-[215px] text-gray">
+        <p className="break-words lg:w-[250px] text-gray">
           {truncateDescription(product.description, 18)}
         </p>
         <div className="flex font-semibold justify-between pt-4">

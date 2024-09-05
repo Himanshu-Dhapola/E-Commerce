@@ -2115,5 +2115,886 @@
       "$date": "2024-08-29T15:20:13.203Z"
     },
     "__v": 0
-  }
+  },{
+  "_id": "66d9c40b15352bba1fd703eb",
+  "title": "mobistyle Designed for iPhone Cover Soft Liquid Silicone Slim Protective Shockproof with Anti-Scratch Microfiber Lining Phone Back Cover Case",
+  "description": "This Case Raised around the help protect Protection Camera, Precise cutting can protect each camera hole. Protect the camera more securely than other phone cases. Against scratches and daily wear and tear.",
+  "quantity": 20,
+  "price": 999,
+  "discountedPrice": 284,
+  "discountPercentage": 72,
+  "brand": "Mobistyle",
+  "color": "Pink",
+  "size": [
+    {
+      "name": "iPhonne 14",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9c40b15352bba1fd703ec"
+      }
+    },
+    {
+      "name": "iPhonne 15",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9c40b15352bba1fd703ed"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/611-VHD+exL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Accessories",
+  "createdAt": {
+    "$date": "2024-09-05T14:45:31.079Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T14:45:31.079Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9e8ef8cc1534011c6330e",
+  "title": "CEDO Nothing Phone (1) (5G) Back Cover | Camera Bump Protection & Inner Velvet Fabric Lining | Ultra Slim Matte Soft Rubberised Case Cover",
+  "description": "ANTI-SHATTER: Advance shock absorption protection from drops and bumps. Raised lips protect the screen and camera bump. Unique Look featuring Smooth Silk Brushed texture, glossy accents and carbon fibre texture.",
+  "quantity": 10,
+  "price": 999,
+  "discountedPrice": 149,
+  "discountPercentage": 85,
+  "brand": "Cedo",
+  "color": "Black",
+  "size": [
+    {
+      "name": "Silicone",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9e8ef8cc1534011c6330f"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/61bqitrbuqL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Accessories",
+  "createdAt": {
+    "$date": "2024-09-05T17:22:55.142Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T17:22:55.142Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9e9778cc1534011c63320",
+  "title": "ELV Mobile Phone Mount Tabletop Holder for Phones and Tablets - Black",
+  "description": "Metal Phone Stand for Mobile Phones and Tablets SHINING BLACK METAL IPHONE STAND : Shining black metal iphone stand,with lightweight and the ipad stand is portable and edgy,it perfectly work with iphone. PHONE DESK STAND : Phone desk stand is universal perfectly compatible with as majority of smartphones and tablets,such as iphone ipad mini, Although with case,when using an iPad, you should set it horizontally,it will also works well.",
+  "quantity": 10,
+  "price": 89,
+  "discountedPrice": 59,
+  "discountPercentage": 34,
+  "brand": "ELV",
+  "color": "Black",
+  "size": [
+    {
+      "name": "M",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9e9778cc1534011c63321"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/61RGJpcuU0L._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Accessories",
+  "createdAt": {
+    "$date": "2024-09-05T17:25:11.641Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T17:25:11.641Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9eb4d8cc1534011c6334e",
+  "title": "Logitech B170 Wireless Mouse, 2.4 GHz with USB Nano Receiver, Optical Tracking, 12-Months Battery Life, Ambidextrous, PC/Mac/Laptop",
+  "description": "Reliable Wireless Connection : Enjoy a wireless connection up to 10m away thanks to a plug-and-forget USB mini-receiver Optical Tracking : The advanced optical tracking features enable ultra precise moves on almost any surface. Required: available USB port, Windows 7, 8, 10 or later, macOS 10.5 or later, Chrome OS, Linux Kernel 2.6+ 12-Month Battery Life : Don’t worry about constant battery changes as this wired Logitech mouse has a 12-month battery life.",
+  "quantity": 10,
+  "price": 795,
+  "discountedPrice": 595,
+  "discountPercentage": 25,
+  "brand": "Logitech",
+  "color": "Black",
+  "size": [
+    {
+      "name": "B170",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9eb4d8cc1534011c6334f"
+      }
+    },
+    {
+      "name": "M186",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9eb4d8cc1534011c63350"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/516LU0H963L._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Accessories",
+  "createdAt": {
+    "$date": "2024-09-05T17:33:01.380Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T17:33:01.380Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9ebc08cc1534011c63365",
+  "title": "STRIFF Mpad Mouse Mat 230X190X3mm Gaming Mouse Pad, Non-Slip Rubber Base, Waterproof Surface, Premium-Textured, Compatible with Laser and Optical Mice",
+  "description": "The mouse pad has a specially designed speed type surface that allows for fast and precise mouse movements, making it ideal for gamers and professionals who require high levels of accuracy and speed in their work.",
+  "quantity": 10,
+  "price": 1299,
+  "discountedPrice": 109,
+  "discountPercentage": 92,
+  "brand": "STRIFF",
+  "color": "Black",
+  "size": [
+    {
+      "name": "S",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9ebc08cc1534011c63366"
+      }
+    },
+    {
+      "name": "M",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9ebc08cc1534011c63367"
+      }
+    },
+    {
+      "name": "L",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9ebc08cc1534011c63368"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/61zroMjd9FL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Accessories",
+  "createdAt": {
+    "$date": "2024-09-05T17:34:56.435Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T17:34:56.435Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9ecb58cc1534011c63394",
+  "title": "ASUS TUF F15 Gaming Laptop, Intel Core i5-11400H 11th Gen, FHD 144Hz,(16GB RAM/512GB SSD/4GB NVIDIA GeForce RTX 2050/Windows 11/ RGB Backlit KB/2.30 kg), FX506HF-HN025W",
+  "description": "Processor: Intel Core i5-11400H Processor 2.7 GHz (12M Cache, up to 4.5 GHz, 6 Cores) efficient multitasking, Improved multimedia tasks etc. Storage: 512GB PCIe 3.0 NVMe M.2 SSD with additional 1x M.2 Slot for SSD Storage expansion |Memory: 16GB SO-DIMM DDR4 3200MHz Support Up to 32GB 2x SO-DIMM slots.Display: 144Hz Refresh Rate, 15.6 inch (39.62 cms) FHD (1920 x 1080) 16:9 250nits,vIPS-level Anti-glare display, Contrast Ratio: 1000:1 with Adaptive-Sync",
+  "quantity": 10,
+  "price": 80990,
+  "discountedPrice": 51990,
+  "discountPercentage": 36,
+  "brand": "ASUS",
+  "color": "Black",
+  "size": [
+    {
+      "name": "15.6inch",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9ecb58cc1534011c63395"
+      }
+    },
+    {
+      "name": "16inch",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9ecb58cc1534011c63396"
+      }
+    },
+    {
+      "name": "17inch",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9ecb58cc1534011c63397"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/71l1MOx3Q+L._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Laptops",
+  "createdAt": {
+    "$date": "2024-09-05T17:39:01.325Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T17:39:01.325Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9ee898cc1534011c633ac",
+  "title": "Lenovo [Smartchoice] LOQ 12th Gen Intel Core i5-12450HX /39.6cm/ 144Hz 300Nits FHD Gaming Laptop (16GB/512GB SSD/Win 11/ RTX 3050 6GB Graphics/100% sRGB/MSO 21/3 Mon Game Pass/2.4Kg), 83GS003UIN",
+  "description": "Processor: Intel Core i5-12450HX | Speed: 2.4GHz (Base) - 4.4GHz (Max) | 8 Cores | 12 Threads | 12MB Cache Display: HD(1920x1080) IPS Technology | 144 Hz Refresh Rate | 100pct. sRGB |Brightness: 300Nits Anti-glare || Connectivity : Wifi 6E 11ax (2x2) | Bluetooth 5.2 Memory: 16GB RAM DDR5-4800 | Storage: 512GB SSD (Expandable upto 1TB)",
+  "quantity": 10,
+  "price": 95890,
+  "discountedPrice": 69490,
+  "discountPercentage": 28,
+  "brand": "Lenovo",
+  "color": "Grey",
+  "size": [
+    {
+      "name": "15.6inch",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9ee898cc1534011c633ad"
+      }
+    },
+    {
+      "name": "16inch",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9ee898cc1534011c633ae"
+      }
+    },
+    {
+      "name": "17inch",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9ee898cc1534011c633af"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/81tmCrtiRgL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Laptops",
+  "createdAt": {
+    "$date": "2024-09-05T17:46:49.136Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T17:46:49.136Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9efa78cc1534011c633cd",
+  "title": "HP Laptop 15s, AMD Ryzen 3 5300U, FHD, 8GB DDR4, 512GB SSD, AMD Radeon Graphics, Thin & Light, Dual Speakers (Win 11, MSO 2021, 1.69 kg), eq2212AU",
+  "description": "4-core AMD Ryzen 3 5300U?8 threads and 4MB L3 cache deliver powerful performance and swift responsiveness. The AMD Radeon graphics help you experience crisp visuals with vivid clarity.;?Upgraded memory and storage?8GB DDR4 RAM integrates a higher-bandwidth memory for smooth functioning. The high-speed 512GB PCIe NVMe M.2 SSD creates more room to work with ample storage.",
+  "quantity": 10,
+  "price": 44999,
+  "discountedPrice": 32490,
+  "discountPercentage": 27,
+  "brand": "Hp",
+  "color": "Silver",
+  "size": [
+    {
+      "name": "14inch",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9efa78cc1534011c633ce"
+      }
+    },
+    {
+      "name": "15.6inch",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9efa78cc1534011c633cf"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/71DRVwvDALL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Laptops",
+  "createdAt": {
+    "$date": "2024-09-05T17:51:35.553Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T17:51:35.553Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f0768cc1534011c633f6",
+  "title": "Dell 15 Thin & Light Laptop, Intel Core i5-1334U Processory, Backlit KB, Windows 11 + MSO'21, 15 Months McAfee, 1.65kg",
+  "description": "Processor: Intel Core i5-1334U (Up to 4.60GHz, 12MB, 10 Cores) RAM: 16 GB: 2 x 8 GB, DDR4, 2666 MT/s & Storage: 1TB SSD Display : FHD WVA AG Narrow Border 120Hz 250 nits Keyboard: Backlit Keyboard Ports: 1 USB 3.2 Gen 1 Type-A port + 1 USB 3.2 Gen 1 Type-C data only, 1 USB 2.0 port, 1 headset jack, 1 HDMI 1.4 port*, 1 M.2 2230/2280 slot for solid-state drive, 1 SD 3.0 card slot",
+  "quantity": 10,
+  "price": 70620,
+  "discountedPrice": 59899,
+  "discountPercentage": 15,
+  "brand": "Dell",
+  "color": "Silver",
+  "size": [
+    {
+      "name": "14inch",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f0768cc1534011c633f7"
+      }
+    },
+    {
+      "name": "15.6inch",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f0768cc1534011c633f8"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/714UFzp5O7L._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Laptops",
+  "createdAt": {
+    "$date": "2024-09-05T17:55:02.787Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T17:55:02.787Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f10b8cc1534011c6341d",
+  "title": "Samsung Galaxy Watch4 Classic LTE",
+  "description": "Only compatible with Android Smartphones (Runs on Wear OS Powered by Samsung) Bioelectrical Impedance Analysis Sensor for Body Composition Analysis, Optical Heart Rate Sensor. Health Monitoring features such as Advanced Sleep Analysis & Women's Health. Enhanced Fitness tracking lets you track 90+ workouts; Enriched App availability and connectivity with Wear OS, Powered by Samsung. Typical Usage Time (Hours): up to 40 Hours.",
+  "quantity": 10,
+  "price": 42999,
+  "discountedPrice": 10499,
+  "discountPercentage": 76,
+  "brand": "Samsung",
+  "color": "Black",
+  "size": [
+    {
+      "name": "41mm",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f10b8cc1534011c6341e"
+      }
+    },
+    {
+      "name": "45mm",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f10b8cc1534011c6341f"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/61ftRB6KycL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Watches",
+  "createdAt": {
+    "$date": "2024-09-05T17:57:31.014Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T17:57:31.014Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f1dc8cc1534011c63430",
+  "title": "IIK COLLECTION Watches for Women Round Studded Dial |Day and Date Quartz Movemnet |Long Battery Life|Stainless Steel Bracelet Chain Strap|Double Lock Clasp Safety Watches for Girls",
+  "description": "Watch Display Type: Day and Date Analogue, Movement: Quartz, Dial Color: Silver, Case & Band Material: Stainless steel, Watch size (Strap: 15MM); Comfortable and durable Stainless Steel band. flexible, breathable, easy to adjust the watch to your wrist size when you need a watch to prove that you value & time. Strap is also durable.",
+  "quantity": 10,
+  "price": 1499,
+  "discountedPrice": 449,
+  "discountPercentage": 70,
+  "brand": "IIK",
+  "color": "Silver",
+  "size": [
+    {
+      "name": "29mm",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f1dc8cc1534011c63431"
+      }
+    },
+    {
+      "name": "34mm",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f1dc8cc1534011c63432"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/71ZgUJQOvYL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Watches",
+  "createdAt": {
+    "$date": "2024-09-05T18:01:00.454Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T18:01:00.454Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f2508cc1534011c63435",
+  "title": "CRESTELLO Silicone Strap Analog Wrist Watch for Women | CR-Ck137",
+  "description": "Strap Width: 16 mm Package Contents: 1 Wrist Watch & Warranty Card Warranty Summary: 1 Year Manufacturer's warranty on all the manufacturing defects including the machine movement. Any damages due to wear and tear or mishandling of the product are not covered under warranty. The quartz movement is covered under warranty but the cell is not covered under warranty.",
+  "quantity": 10,
+  "price": 1499,
+  "discountedPrice": 449,
+  "discountPercentage": 70,
+  "brand": "CRESTELLO",
+  "color": "Blue",
+  "size": [
+    {
+      "name": "Gold Crown",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f2508cc1534011c63436"
+      }
+    },
+    {
+      "name": "Silver Crown",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f2508cc1534011c63437"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/61yXlWMrk4L._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Watches",
+  "createdAt": {
+    "$date": "2024-09-05T18:02:56.629Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T18:02:56.629Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f3098cc1534011c63449",
+  "title": "Casio Enticer Analog Dial Watc",
+  "description": "Dial Color: Black, Case Shape: Round, Dial Glass Material: Mineral Band Color: Silver, Band Material: Stainless Steel Watch Movement Type: Quartz, Watch Display Type: Analog Water Resistance Depth: 50 meters Warranty type:Manufacturer; 2 Years Domestic Warranty Remove plastic at crown to start the watch.",
+  "quantity": 10,
+  "price": 5995,
+  "discountedPrice": 5995,
+  "discountPercentage": 0,
+  "brand": "Casio",
+  "color": "Silver",
+  "size": [
+    {
+      "name": "45mm",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f3098cc1534011c6344a"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/61FKVerMRWL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Watches",
+  "createdAt": {
+    "$date": "2024-09-05T18:06:01.839Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T18:06:01.839Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f3aa8cc1534011c63479",
+  "title": "Leriya Fashion Men's Regular Fit Shirt for Men||Rayon Abstract Printed Shirt||Short Sleeves Hawaiian Beach Shirt||Perfect for Camp||Outing||Summer Wear Shirt for Boys||Gift for Men",
+  "description": "Shirts Fabric:- Soft Rayon || Color :- Multi || Pattern:- Fancy Splash Ink Printed Shirt || Fit Type:- Regular Fit || Sleeves :- Short Sleeves || Sleeve Styling :- Preppy || Neck : Stylish Turn Down || Shirt Length :- Hip Length || Hem Line :- Curved || Button Front || Non-Stretch Package Content:- 1 Shirt for Men Casual || Type: Regular Shirts for Men || Occasion:- Evening Wear, Work Wear, Festival Wear, Function Wear, Club Wear, Party, Hangouts, Picnic, Vacation Wear",
+  "quantity": 10,
+  "price": 1999,
+  "discountedPrice": 329,
+  "discountPercentage": 84,
+  "brand": "Leriya",
+  "color": "Multi",
+  "size": [
+    {
+      "name": "S",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f3aa8cc1534011c6347a"
+      }
+    },
+    {
+      "name": "M",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f3aa8cc1534011c6347b"
+      }
+    },
+    {
+      "name": "L",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f3aa8cc1534011c6347c"
+      }
+    },
+    {
+      "name": "XL",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f3aa8cc1534011c6347d"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/81oMFp+78VL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Fashion",
+  "createdAt": {
+    "$date": "2024-09-05T18:08:42.405Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T18:08:42.405Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f4a18cc1534011c634e8",
+  "title": "Portronics Smart Electric Universal Extension Board Multi Plug with 2500W, 3Mtr Cord Length, 2.1A USB Output",
+  "description": "[8 POWER SOCKETS FOR MULTIPLE USE] : The power converter has 8 separate power sockets for efficient multi-tasking. The power board ensures that equal power is distributed throughout the plugged in devices. [6 USB PORTS WITH 2.1A TOTAL OUTPUT] : Power Plate 7 has 6 USB ports that have a uniform power output of 2.1A. This feature ensures that the plugged in devices get efficient power output throughout their run time.",
+  "quantity": 10,
+  "price": 1999,
+  "discountedPrice": 798,
+  "discountPercentage": 60,
+  "brand": "Portronics",
+  "color": "Black",
+  "size": [
+    {
+      "name": "Power Plate 6",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f4a18cc1534011c634e9"
+      }
+    },
+    {
+      "name": "Power Plate 7",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f4a18cc1534011c634ea"
+      }
+    },
+    {
+      "name": "Power Plate 8",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f4a18cc1534011c634eb"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/518grrfPw8L._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Electronics",
+  "createdAt": {
+    "$date": "2024-09-05T18:12:49.097Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T18:12:49.097Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f5318cc1534011c63521",
+  "title": "ASIAN Men's TARZAN-11 Casual Sneaker Shoes with Synthetic Upper Lightweight Comfortable Mid Top Sneaker Shoes for Men's & Boy's",
+  "description": "Lightweight & Breathable : Exclusive design and durable materials every step feels light and breezy. Breathable, free-moving fabrics which adjust according to your foot and creates an astoundingly easy-going experience. Non Slip & Shockproof : Great engineering strikes a balance in style, made in the potent design and latest fashion trends. Made for long-term wear, with extra emphasis on providing cushion to the feet, removing heel strain.",
+  "quantity": 10,
+  "price": 1299,
+  "discountedPrice": 749,
+  "discountPercentage": 42,
+  "brand": "Asian",
+  "color": "White",
+  "size": [
+    {
+      "name": "6",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f5318cc1534011c63522"
+      }
+    },
+    {
+      "name": "7",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f5318cc1534011c63523"
+      }
+    },
+    {
+      "name": "8",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f5318cc1534011c63524"
+      }
+    },
+    {
+      "name": "9",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f5318cc1534011c63525"
+      }
+    },
+    {
+      "name": "10",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f5318cc1534011c63526"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/71cflgAolqL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Footwear",
+  "createdAt": {
+    "$date": "2024-09-05T18:15:13.459Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T18:15:13.459Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f5d58cc1534011c6359c",
+  "title": "Amico Sports Running Shoes for Men Outdoors for Men",
+  "description": "Care Instructions: Allow your pair of air and de-odorize at a regular basis, this also helps them retain their natural shape; use shoes bags to prevent any stains or mildew; dust any dry dirt from the surface using a clean cloth, do not use polish or shiner Warranty Type: Manufacturer",
+  "quantity": 10,
+  "price": 2499,
+  "discountedPrice": 599,
+  "discountPercentage": 76,
+  "brand": "Amico",
+  "color": "White",
+  "size": [
+    {
+      "name": "6",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f5d58cc1534011c6359d"
+      }
+    },
+    {
+      "name": "7",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f5d58cc1534011c6359e"
+      }
+    },
+    {
+      "name": "8",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f5d58cc1534011c6359f"
+      }
+    },
+    {
+      "name": "9",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f5d58cc1534011c635a0"
+      }
+    },
+    {
+      "name": "10",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f5d58cc1534011c635a1"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/51itIiiHkWL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Footwear",
+  "createdAt": {
+    "$date": "2024-09-05T18:17:57.561Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T18:17:57.561Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f62e8cc1534011c635a4",
+  "title": "BOLTAGO Men's FORTUNER-11 Sports Running Shoes with Ultra Bounce,Twinspring Technology Lightweight EVA Sole with Memory Foam Insole Casual Sneaker Shoes for Men's",
+  "description": "Lightweight & Breathable : Exclusive design and durable materials every step feels light and breezy. Breathable, free-moving fabrics which adjust according to your foot and creates an astoundingly easy-going experience. Multiple Uses: Best running shoes for mens can be used in gym workout, outdoor running, morning walking, basketball, badminton, trekking, hip hop dance, party wear, dancing, volleyball, hiking, athletic sports, cycling, hockey, driving, jogging, kabaddi, kabbadi, marathon, bike riding, training, skating, pt, office, futsal, golf, leisure and tennis",
+  "quantity": 10,
+  "price": 1499,
+  "discountedPrice": 599,
+  "discountPercentage": 60,
+  "brand": "BOLTAGO",
+  "color": "Red",
+  "size": [
+    {
+      "name": "6",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f62e8cc1534011c635a5"
+      }
+    },
+    {
+      "name": "7",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f62e8cc1534011c635a6"
+      }
+    },
+    {
+      "name": "8",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f62e8cc1534011c635a7"
+      }
+    },
+    {
+      "name": "9",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f62e8cc1534011c635a8"
+      }
+    },
+    {
+      "name": "10",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f62e8cc1534011c635a9"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/714pylSqzML._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Footwear",
+  "createdAt": {
+    "$date": "2024-09-05T18:19:26.742Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T18:19:26.742Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f7328cc1534011c635f5",
+  "title": "Motorola G64 5G (Ice Lilac, 12GB RAM) | Expandable Upto 2TB | Upto 24GB RAM with RAM Boost | 50MP (OIS) + 8MP | 16MP Front Camera | MediaTek Dimensity 7025 Processor | 6000 mAh Battery",
+  "description": "16.51 cm (6.5 inch) Full HD+ Display 12 GB RAM | Expandable Upto 1 TB | 50MP (OIS) + 8MP | 16MP Front Camera 6000 mAh Battery Dimensity 7020 Processor Octa-core (2x2.5 GHz Cortex-A78 & 6x2.0 GHz Cortex-A55) TurboPower 33 W charger",
+  "quantity": 10,
+  "price": 19999,
+  "discountedPrice": 18196,
+  "discountPercentage": 9,
+  "brand": "Motorola",
+  "color": "Purple",
+  "size": [
+    {
+      "name": "128GB",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f7328cc1534011c635f6"
+      }
+    },
+    {
+      "name": "256GB",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f7328cc1534011c635f7"
+      }
+    },
+    {
+      "name": "512GB",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f7328cc1534011c635f8"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/71ynZLgkkBL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Smartphones",
+  "createdAt": {
+    "$date": "2024-09-05T18:23:46.864Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T18:23:46.864Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f7bb8cc1534011c6360b",
+  "title": "Redmi Note 13 Pro+ (Fusion Purple, 8GB RAM) | World's First Mediatek 7200 Ultra 5G | 200MP Hi-Res Camera | 1.5K Curved AMOLED | 120W HyperCharge",
+  "description": "Display: 6.67 Inches; 120 Hz 3D Curved AMOLED 1.5K Display with Corning Gorilla Glass Victus; Resolution: 2712 x 1220 Pixels; Dolby Vision, Adaptive HDR 10+, 68.7billion colors, 1800nits Peak Brightness Processor:Mediatek Dimensity 7200 Octa-core Processor (Based 4nm Architecture) ; Up to 2.8 GHz; Camera: 200MP Main Camera with Samsung ISOCELL HP3 sensor (OIS + EIS supported), 8MP Ultrawide and 2MP Macro | 16MP Front (Selfie) Camera; 7P lens, Dual LED Flash",
+  "quantity": 10,
+  "price": 33999,
+  "discountedPrice": 29499,
+  "discountPercentage": 13,
+  "brand": "Redmi",
+  "color": "Purple",
+  "size": [
+    {
+      "name": "128GB",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f7bb8cc1534011c6360c"
+      }
+    },
+    {
+      "name": "256GB",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f7bb8cc1534011c6360d"
+      }
+    },
+    {
+      "name": "512GB",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f7bb8cc1534011c6360e"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/819sWoSDFRL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Smartphones",
+  "createdAt": {
+    "$date": "2024-09-05T18:26:03.788Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T18:26:03.788Z"
+  },
+  "__v": 0
+},
+{
+  "_id": "66d9f85e8cc1534011c6362d",
+  "title": "Safari Casual backpacks 2 compartments, front pocket, bottle holder, School bags for boys & girls, College bag for women and men, Ideal for school, college, office & travel",
+  "description": "HIGH QUALITY FABRIC: Our lightweight yet durable bags are made of 100% polyester and water resistant fabric. This casual backpack can be by boys and girls for school, college, coaching, tution, or everyday outings. FRONT POCKET: Our trendy unisex bag pack has a front storage pocket that keeps small items neatly organized and easy to access",
+  "quantity": 10,
+  "price": 2599,
+  "discountedPrice": 639,
+  "discountPercentage": 75,
+  "brand": "Safari",
+  "color": "Black",
+  "size": [
+    {
+      "name": "30L",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f85e8cc1534011c6362e"
+      }
+    },
+    {
+      "name": "32L",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f85e8cc1534011c6362f"
+      }
+    },
+    {
+      "name": "35L",
+      "quantity": 10,
+      "_id": {
+        "$oid": "66d9f85e8cc1534011c63630"
+      }
+    }
+  ],
+  "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/51LoviZ7+aL._AC_UL232_SR232,232_.jpg",
+  "numRatings": 0,
+  "category": "Backpacks",
+  "createdAt": {
+    "$date": "2024-09-05T18:28:46.139Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-05T18:28:46.139Z"
+  },
+  "__v": 0
+}
 ]

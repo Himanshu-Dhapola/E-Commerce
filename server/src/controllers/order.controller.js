@@ -24,16 +24,34 @@ const createOrder = async (req, res) => {
 
     if (shippingAddress.id) {
       let existsAddress = await Address.findById(shippingAddress.id);
+      if (!existsAddress) {
+        return res.status(404).json({
+          success: false,
+          message: 'Address not found',
+        });
+      }
       address = existsAddress;
     } else {
       address = await Address.create(shippingAddress);
-      address.customer = customer;
+      address.customer = customer._id;
       await address.save();
-      customer.address.push(address);
+
+      if (!customer.address) {
+        customer.address = [];
+      }
+
+      customer.address.push(address._id);
       await customer.save();
     }
 
     const cart = await findCustomerCart(customer._id);
+
+    if (!cart || cart.cartItem.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: 'Cart is empty',
+      });
+    }
 
     const orderItems = [];
     let totalPrice = 0;
@@ -49,29 +67,27 @@ const createOrder = async (req, res) => {
         customer: customer._id,
         discountedPrice: item.discountedPrice,
       });
-      const createdOrderItem = await orderItem.save();
-      orderItems.push(createdOrderItem);
-      totalPrice += item.price;
-      totalDiscountedPrice += item.discountedPrice;
+
+      orderItems.push(orderItem);
+      totalPrice += item.price * item.quantity;
+      totalDiscountedPrice += item.discountedPrice * item.quantity;
       totalItem += item.quantity;
     }
 
     const discount = totalPrice - totalDiscountedPrice;
 
     const createdOrder = await Order.create({
-      customer: customer,
+      customer: customer._id,
       orderItems,
       totalPrice,
       totalDiscountedPrice,
       discount,
       totalItem,
-      shippingAddress: address,
+      shippingAddress: address._id,
     });
 
-    const savedOrder = await createdOrder.save();
-
     return res.status(200).json({
-      data: savedOrder,
+      data: createdOrder,
       success: true,
       message: 'Order Created Successfully',
     });
@@ -82,6 +98,7 @@ const createOrder = async (req, res) => {
     });
   }
 };
+
 
 const findOrderById = async (req, res) => {
   try {
