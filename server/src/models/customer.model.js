@@ -39,12 +39,6 @@ const customerSchema = new mongoose.Schema(
         ref: 'Address',
       },
     ],
-    payment: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Payment',
-      },
-    ],
   },
   { timestamps: true }
 );

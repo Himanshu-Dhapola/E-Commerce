@@ -125,7 +125,7 @@ const emptyCart = async (req, res) => {
         .json({ success: false, message: 'Cart not found' });
     }
 
-    await CartItem.deleteMany({ cart: cart._id });
+    await CartItem.deleteMany({ _id: { $in: cart.cartItem } });
 
     cart.cartItem = [];
     cart.totalPrice = 0;

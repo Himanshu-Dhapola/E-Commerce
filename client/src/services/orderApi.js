@@ -21,7 +21,7 @@ export function createOrder({ customerAddress, navigate }) {
       }
       dispatch(setOrder(response.data.data));
     } catch (error) {
-      toast.error("All fields are required", {
+      toast.error(error.response.data.message, {
         style: {
           borderRadius: "10px",
           background: "#333",
@@ -51,7 +51,7 @@ export async function getAllOrders() {
       },
     });
   } catch (error) {
-    toast.error("noting found", {
+    toast.error(error.response.data.message, {
       style: {
         borderRadius: "10px",
         background: "#333",
@@ -76,7 +76,7 @@ export function getOrderById(orderId) {
       
       dispatch(setOrder(response.data.data));
     } catch (error) {
-      toast.error("noting found", {
+      toast.error(error.response.data.message, {
         style: {
           borderRadius: "10px",
           background: "#333",

@@ -4,7 +4,8 @@ import { useNavigate, useParams } from "react-router";
 import { findProductById } from "../../../services/productApi";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../../../services/cartApi";
-import toast from "react-hot-toast";
+import ProductCard from "../../../Customer/Components/Product/ProductCard";
+import axios from "axios";
 import PageNav from "../Navigation/PageNav";
 import Footer from "../Footer/Footer";
 
@@ -17,46 +18,61 @@ export default function ProductDetails() {
   const dispatch = useDispatch();
   const { product } = useSelector((state) => state.product);
   const id = useParams();
-  const [selectedSize, setSelectedSize] = useState(product?.size[0].name);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [recommendedProducts, setRecommendedProducts] = useState([]);
+  const [showPopup, setShowPopup] = useState(false); // Popup visibility state
 
   const handleAddToCart = () => {
     if (!localStorage.getItem("accessToken")) {
-      toast("Login to add item to cart", {
-        style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
-        },
-      });
       navigate("/login");
     } else {
-      const data = {
-        productId: id.productId,
-        size: selectedSize.name,
-      };
-      if (data.size) {
+      if (!selectedSize) {
+        setShowPopup(true);
+        setTimeout(() => setShowPopup(false), 4000);
+      } else {
+        const data = {
+          productId: id.productId,
+          size: selectedSize.name,
+        };
         dispatch(addItemToCart(data));
         navigate("/cart");
-      } else {
-        toast("Select a Size", {
-          style: {
-            borderRadius: "10px",
-            background: "#333",
-            color: "#fff",
-          },
-          duration: 5000,
-        });
       }
     }
   };
+
   useEffect(() => {
     dispatch(findProductById(id));
+    const fetchRecommendations = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/recommend/${id.productId}`
+        );
+        setRecommendedProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching recommendations:", error);
+      }
+    };
+    fetchRecommendations();
     window.scrollTo(0, 0);
-  }, []);
+  }, [id.productId, dispatch]);
 
   return (
     <div className="bg-white font-Poppins">
       <PageNav />
+      {showPopup && (
+        <div
+          className={`fixed top-4 left-0 right-0 z-50 flex justify-center transition-transform duration-300 ${
+            showPopup
+              ? "translate-y-0 opacity-100"
+              : "-translate-y-full opacity-0"
+          }`}
+        >
+          <div className="text-white bg-[#333] p-3 rounded-lg shadow-lg mt-2 transition-opacity duration-300">
+            <p className="text-xl font-semibold">Select a Size</p>
+          </div>
+        </div>
+      )}
+
       <div className="pt-6 pb-10 flex flex-col lg:flex-row justify-center items-center">
         <div className=" md:ml-10 mt-6 w-[200px] md:w-[450px] sm:px-6 rounded-lg lg:block">
           <img
@@ -136,7 +152,7 @@ export default function ProductDetails() {
 
               <button
                 onClick={handleAddToCart}
-                type="submit"
+                type="button"
                 className="mt-10 uppercase font-semibold flex w-full items-center justify-center rounded-md border border-transparent bg-color px-8 py-3 text-base text-white hover:bg-color hover:scale-110 transition-all ease-in duration-200"
               >
                 Add to Cart
@@ -146,13 +162,14 @@ export default function ProductDetails() {
         </div>
       </div>
 
-      {/* similar products */}
-      <div className="mx-auto max-w-full px-4">
-        <h1 className="text-2xl font-bold my-6 tracking-tight text-color sm:text-3xl">
+      <div className="bg-smoke mx-auto max-w-full px-4 pb-10">
+        <h1 className="text-2xl md:text-3xl font-bold pt-10 pl-10 my-6 tracking-tight text-color">
           Similar Products
         </h1>
-        <div className="flex flex-wrap space-y-6">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-4 space-y-6">
+          {recommendedProducts.map((item, index) => (
+            <ProductCard product={item} key={index} />
+          ))}
         </div>
       </div>
       <Footer />

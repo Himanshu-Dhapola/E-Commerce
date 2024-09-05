@@ -84,99 +84,6 @@ const findProductById = async (req, res) => {
   });
 };
 
-const getAllProducts = async (req, res) => {
-  try {
-    const reqQuery = req.query;
-    let {
-      color,
-      size,
-      minPrice,
-      maxPrice,
-      minDiscount,
-      sort,
-      stock,
-      pageNumber,
-      pageSize,
-    } = reqQuery;
-
-    pageSize = parseInt(pageSize) || 10;
-    pageNumber = parseInt(pageNumber) || 1;
-
-    let query = await Product.find();
-
-    console.log(query)
-
-    if (color) {
-      const colorSet = new Set(
-        color.split(',').map((color) => color.trim().toLowerCase())
-      );
-      const colorRegex =
-        colorSet.size > 0 ? new RegExp([...colorSet].join('|'), 'i') : null;
-
-      query = query.where('color').regex(colorRegex);
-    }
-
-    if (size) {
-      const sizeSet = new Set(size);
-      query = query.where('size.name').in([...sizeSet]);
-    }
-
-    if (minPrice && maxPrice) {
-      query = query.where('discountedPrice').gte(minPrice).lte(maxPrice);
-    }
-
-    if (minDiscount) {
-      query = query.where('discountPercentage').gte(minDiscount);
-    }
-
-    if (stock) {
-      if (stock === 'in_stock') {
-        query = query.where('quantity').gt(0);
-      } else if (stock === 'out_of_stock') {
-        query = query.where('quantity').gt(1);
-      }
-    }
-
-    if (sort) {
-      const sortDirection = sort === 'price_high' ? -1 : 1;
-      query = query.sort({ discountedPrice: sortDirection });
-    }
-
-    const totalProducts = await Product.countDocuments(query);
-    console.log('TOTAL PRODUCTS', totalProducts);
-
-    const skip = (pageNumber - 1) * pageSize;
-
-    query = query.skip(skip).limit(pageSize);
-
-    const products = await query.exec();
-
-    console.log('SECOND', products);
-
-    const totalPages = Math.ceil(totalProducts / pageSize);
-
-    return res.status(201).json({
-      data: { content: products, currentPage: pageNumber, totalPages },
-      message: 'Products Filtered Successfully!!!',
-      success: true,
-    });
-  } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: 'Something went wrong while fetching the products',
-    });
-  }
-};
-
-const createMultipleProducts = async (req, res) => {
-  const products = req.body;
-  for (let product of products) {
-    createProduct(product);
-  }
-  return res
-    .status(200)
-    .json({ success: true, message: 'Multiple Products Created Successfully' });
-};
 
 const searchProducts = async (req, res) => {
   try {
@@ -224,9 +131,7 @@ export {
   createProduct,
   deleteProduct,
   updateProduct,
-  getAllProducts,
   findProductById,
-  createMultipleProducts,
   searchProducts,
   categorySearch,
 };

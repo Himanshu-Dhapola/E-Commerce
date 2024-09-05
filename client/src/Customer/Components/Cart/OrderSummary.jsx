@@ -1,3 +1,5 @@
+import AddressCard from "../AddressDetails/AddressCard";
+import CartItem from "./CartItem";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getOrderById } from "../../../services/orderApi";
@@ -5,14 +7,11 @@ import { useLocation } from "react-router";
 import { useSelector } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
 import { axiosInstance } from "../../../axios/axiosInstance";
-import AddressCard from "../AddressDetails/AddressCard";
-import CartItem from "./CartItem";
 
 export default function OrderSummary() {
   const dispatch = useDispatch();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-
   const { order } = useSelector((state) => state.order);
   const { cart } = useSelector((state) => state.cart);
   const orderId = searchParams.get("order_id");

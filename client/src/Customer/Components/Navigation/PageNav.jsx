@@ -1,11 +1,11 @@
+import Cookies from "js-cookie";
+import Logo from "./Logo";
 import { NavLink, useNavigate } from "react-router-dom";
 import { MdOutlineSearch, MdMenu, MdClose } from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProducts } from "../../../services/productApi";
-import Cookies from "js-cookie";
-import Logo from "./Logo";
 
 export default function PageNav() {
   const dispatch = useDispatch();

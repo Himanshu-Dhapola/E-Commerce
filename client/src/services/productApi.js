@@ -6,57 +6,8 @@ import {
   setLoading,
 } from "../Feature/Slices/productSlice";
 
-export function findProducts(productData) {
-  return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
-    dispatch(setLoading(true));
-    const {
-      color,
-      size,
-      minPrice,
-      maxPrice,
-      minDiscount,
-      stock,
-      sort,
-      pageNumber,
-      pageSize,
-    } = productData;
-    try {
-      const response = await axiosInstance.get(
-        `/api/v1/products?color=${color}&size=${size}&minPrice=${minPrice}&maxPrice=${maxPrice}&minDiscount=${minDiscount}&stock=${stock}&sort=${sort}&pageNumber=${pageNumber}&pageSize=${pageSize}`
-      );
-
-      toast.success("Found Desired Products", {
-        style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
-        },
-      });
-
-      console.log("RES: ",response);
-
-      if (!response.data.success) {
-        throw new Error(response.data.message);
-      }
-      dispatch(setProducts(response.data.data.product));
-    } catch (error) {
-      toast.error(error.message, {
-        style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
-        },
-      });
-    }
-    dispatch(setLoading(false));
-    toast.dismiss(toastId);
-  };
-}
-
 export function findProductById(productData) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     const { productId } = productData;
     try {
@@ -73,7 +24,6 @@ export function findProductById(productData) {
       // toast.error(error.response.data.message);
     }
     dispatch(setLoading(false));
-    toast.dismiss(toastId);
   };
 }
 
@@ -92,7 +42,7 @@ export function searchProducts(searchProduct,navigate) {
       dispatch(setProducts(response.data.products));
       navigate(`/products/search/${searchProduct}`);
     } catch (error) {
-      toast.error(error.message, {
+      toast.error(error.response.data.message, {
         style: {
           borderRadius: "10px",
           background: "#333",
@@ -121,7 +71,7 @@ export function categorySearch(category, navigate) {
       dispatch(setProducts(response.data.products));
       navigate(`/products/category/${category}`);
     } catch (error) {
-      toast.error(error.message, {
+      toast.error(error.response.data.message, {
         style: {
           borderRadius: "10px",
           background: "#333",

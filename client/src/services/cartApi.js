@@ -19,7 +19,7 @@ export function getCartItem() {
       dispatch(setCart(response.data.data));
       dispatch(setCartItems(response.data.data.cartItem));
     } catch (error) {
-      toast.error("Something went wrong", {
+      toast.error(error.response.data.message, {
         style: {
           borderRadius: "10px",
           background: "#333",
@@ -48,7 +48,7 @@ export function addItemToCart(cartData) {
         },
       });
     } catch (error) {
-      toast.error(error.message, {
+      toast.error(error.response.data.message, {
         style: {
           borderRadius: "10px",
           background: "#333",
@@ -79,7 +79,7 @@ export function removeCartItem(cartItemId) {
         },
       });
     } catch (error) {
-      toast.error("Something went wrong while removing the item", {
+      toast.error(error.response.data.message, {
         style: {
           borderRadius: "10px",
           background: "#333",
@@ -103,7 +103,7 @@ export function updateCartItem(cartData) {
       }
       dispatch(getCartItem());
     } catch (error) {
-      toast.error("Something went wrong while updating the item", {
+      toast.error(error.response.data.message, {
         style: {
           borderRadius: "10px",
           background: "#333",
@@ -123,7 +123,7 @@ export function emptyCart() {
       }
       dispatch(clearCart());
     } catch (error) {
-      toast.error("Error Emptying the Cart", {
+      toast.error(error.response.data.message, {
         style: {
           borderRadius: "10px",
           background: "#333",

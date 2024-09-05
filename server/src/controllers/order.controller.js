@@ -83,37 +83,6 @@ const createOrder = async (req, res) => {
   }
 };
 
-const placeOrder = async (orderId) => {
-  const order = findOrderById(orderId);
-  order.orderStatus = 'Placed';
-  order.paymentDetails.status = 'Completed';
-  return await order.save();
-};
-
-const confirmOrder = async (orderId) => {
-  const order = findOrderById(orderId);
-  order.orderStatus = 'Comfirmed';
-  return await order.save();
-};
-
-const shipOrder = async (orderId) => {
-  const order = findOrderById(orderId);
-  order.orderStatus = 'Shipped';
-  return await order.save();
-};
-
-const deliverOrder = async (orderId) => {
-  const order = findOrderById(orderId);
-  order.orderStatus = 'Delivered';
-  return await order.save();
-};
-
-const cancelOrder = async (orderId) => {
-  const order = findOrderById(orderId);
-  order.orderStatus = 'Cancelled';
-  return await order.save();
-};
-
 const findOrderById = async (req, res) => {
   try {
     const orderId = req.params.id;
@@ -142,56 +111,4 @@ const findOrderById = async (req, res) => {
   }
 };
 
-const customerOrderHistory = async (req, res) => {
-  try {
-    const customer = req.customer;
-    const order = await Order.find({
-      customer: customer._id,
-      orderStatus: 'Placed',
-    })
-      .populate({ path: 'orderItems', populate: { path: 'product' } })
-      .lean();
-
-    if (!order) {
-      return res.status(400).json({
-        success: false,
-        message: 'Something went wrong while acessing order history',
-      });
-    }
-
-    return res.status(200).json({
-      order,
-      success: true,
-      message: 'Order History Found Successfully',
-    });
-  } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: 'Something went wrong while finding customer order history',
-    });
-  }
-};
-
-const getAllOrders = async () => {
-  return await Order.find()
-    .populate({ path: 'orderItems', populate: { path: 'product' } })
-    .lean();
-};
-
-const deleteOrder = async (orderId) => {
-  const order = await findOrderById(orderId);
-  await Order.findByIdAndDelete(order._id);
-};
-
-export {
-  createOrder,
-  placeOrder,
-  confirmOrder,
-  shipOrder,
-  deliverOrder,
-  cancelOrder,
-  customerOrderHistory,
-  getAllOrders,
-  deleteOrder,
-  findOrderById,
-};
+export { createOrder, findOrderById };

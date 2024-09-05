@@ -1,16 +1,27 @@
 import PropTypes from "prop-types";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { LuPlusCircle } from "react-icons/lu";
-import { LuMinusCircle } from "react-icons/lu";
+import { LuPlusCircle, LuMinusCircle } from "react-icons/lu";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router";
 import { removeCartItem, updateCartItem } from "../../../services/cartApi";
+import { useState, useEffect } from "react";
+
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
   const location = useLocation();
-
+  const [wordLimit, setWordLimit] = useState(20);
   const querySearch = new URLSearchParams(location.search);
   const step = querySearch.get("step");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWordLimit(window.innerWidth < 768 ? 10 : 20);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleCartItemQuantity = (num) => {
     const data = {
@@ -26,6 +37,19 @@ export default function CartItem({ item }) {
     dispatch(removeCartItem(item._id));
   };
 
+  const truncateDescription = (description) => {
+    if (typeof description !== "string") {
+      return ""; 
+    }
+
+    const words = description.split(" ");
+    if (words.length > wordLimit) {
+      return words.slice(0, wordLimit).join(" ") + "...";
+    }
+    return description;
+  };
+
+
   return (
     <div className="p-3 md:p-5 shadow-lg border rounded-lg m-5 bg-white font-Poppins">
       <div className="flex items-center">
@@ -38,9 +62,9 @@ export default function CartItem({ item }) {
         </div>
         <div className="ml-5 space-y-1 text-[8px] sm:text-[10px] md:text-base">
           <p className="font-semibold">{item.product?.title}</p>
-          <p className>{item.product?.description}</p>
+          <p>{truncateDescription(item.product?.description)}</p>
           <p className="text-[10px] md:text-base">
-            Size: <span>{item.size}</span>,{" "}
+            Size: <span>{item.size}</span>{" "}
             <span className="uppercase text-[10px] md:text-base">
               {item.product?.color}
             </span>

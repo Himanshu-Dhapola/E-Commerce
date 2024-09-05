@@ -1,5 +1,4 @@
-import axios from "axios";
-import { BASE_URI_API } from "../axios/axiosInstance";
+import { axiosInstance } from "../axios/axiosInstance";
 import {
   setLoading,
   setCustomer,
@@ -13,8 +12,8 @@ export function registerCustomer(customerData, navigate) {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     try {
-      const response = await axios.post(
-        `${BASE_URI_API}/api/v1/customer/register`,
+      const response = await axiosInstance.post(
+        `/api/v1/customer/register`,
         customerData
       );
 
@@ -44,8 +43,8 @@ export function loginCustomer(loginDetails, navigate) {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     try {
-      const response = await axios.post(
-        `${BASE_URI_API}/api/v1/customer/login`,
+      const response = await axiosInstance.post(
+        `/api/v1/customer/login`,
         loginDetails
       );
 
@@ -74,7 +73,6 @@ export function loginCustomer(loginDetails, navigate) {
         JSON.stringify(response.data.accessToken)
       );
       localStorage.setItem("customer", JSON.stringify(response.data.customer));
-
       navigate("/");
     } catch (error) {
       toast.error(error.response.data.message);
@@ -88,12 +86,8 @@ export function loginCustomer(loginDetails, navigate) {
 export function getCustomerDetails(accessToken, navigate) {
   return async (dispatch) => {
     try {
-      const response = await axios.get(
-        `${BASE_URI_API}/api/v1/customer/details`,
-        {
-          headers: { Authorization: `Bearer ${accessToken}` },
-          withCredentials: true,
-        }
+      const response = await axiosInstance.get(
+        `/api/v1/customer/details`,
       );
 
       if (!response.data.success) {
@@ -108,7 +102,7 @@ export function getCustomerDetails(accessToken, navigate) {
 
       navigate("/");
     } catch (error) {
-      // toast.error(error.response.data.message);
+      //toast.error(error.response.data.message);
     }
     dispatch(setLoading(false));
   };

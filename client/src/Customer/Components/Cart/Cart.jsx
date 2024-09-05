@@ -1,10 +1,10 @@
+import PageNav from "../Navigation/PageNav";
+import CartItem from "./CartItem";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartItem } from "../../../services/cartApi";
 import { useEffect } from "react";
 import { PiShoppingCartDuotone } from "react-icons/pi";
-import PageNav from "../Navigation/PageNav";
-import CartItem from "./CartItem";
 
 export default function Cart() {
   const navigate = useNavigate();

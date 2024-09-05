@@ -24,21 +24,6 @@ const orderSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Address',
     },
-    paymentDetails: {
-      paymentMethod: {
-        type: String,
-      },
-      transactionId: {
-        type: String,
-      },
-      paymentId: {
-        type: String,
-      },
-      paymentStatus: {
-        type: String,
-        default: 'Pending',
-      },
-    },
     totalPrice: {
       type: Number,
       required: true,

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cart: null,
   isLoading: false,
-  cartItems: [],
+  cartItem: [],
 };
 
 const cartSlice = createSlice({
@@ -17,10 +17,10 @@ const cartSlice = createSlice({
       state.isLoading = action.payload;
     },
     setCartItems(state, action) {
-      state.cartItems = action.payload;
+      state.cartItem = action.payload;
     },
     clearCart(state) {
-      state.cartItems = [];
+      state.cartItem = [];
       state.cart = null; 
       state.isLoading = false;
     },
