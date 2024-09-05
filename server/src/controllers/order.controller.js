@@ -22,7 +22,6 @@ const createOrder = async (req, res) => {
     const shippingAddress = req.body;
     let address;
 
-
     if (shippingAddress.id) {
       let existsAddress = await Address.findById(shippingAddress.id);
       address = existsAddress;

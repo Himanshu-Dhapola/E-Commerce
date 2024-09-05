@@ -60,12 +60,12 @@ export default function Login() {
               className="placeholder:text-slate-400 block bg-white w-[280px] h-8 md:w-[350px] md:h-10 border border-slate-300 rounded-lg pl-5 focus:ring-color focus:border-color pr-3 shadow-sm focus:outline-none self-center"
             />
             {eye ? (
-              <FaEye
+              <FaEyeSlash
                 onClick={() => setEye(false)}
                 className="absolute right-3 bottom-2 md:right-4 md:bottom-3 text-lg hover:text-color cursor-pointer transition-all duration-300 ease-out"
               />
             ) : (
-              <FaEyeSlash
+              <FaEye
                 onClick={() => setEye(true)}
                 className="absolute  right-3 bottom-2 md:right-4 md:bottom-3 text-lg hover:text-color cursor-pointer transition-all duration-300 ease-out"
               />

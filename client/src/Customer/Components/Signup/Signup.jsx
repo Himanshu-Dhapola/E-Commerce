@@ -4,6 +4,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { registerCustomer } from "../../../services/authApi";
+import { toast } from "react-hot-toast";
 
 export default function Signup() {
   const [eye, setEye] = useState(false);
@@ -26,6 +27,38 @@ export default function Signup() {
 
   const handleRegister = (e) => {
     e.preventDefault();
+    
+    if (!customerDetails.email.endsWith("@gmail.com")) {
+      toast.error(
+        "Enter valid Email",
+        {
+          style: {
+            borderRadius: "10px",
+            background: "#333",
+            color: "#fff",
+          },
+        }
+      );
+      setCustomerDetails({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+      });
+      return;
+    }
+
+    if (customerDetails.password.length < 6) {
+      toast.error("Create a Strong Password With length greater than 6", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+      return;
+    }
+
     dispatch(registerCustomer(customerDetails, navigate));
     setCustomerDetails({
       firstName: "",
@@ -86,12 +119,12 @@ export default function Signup() {
               className="placeholder:text-slate-400 block bg-white w-[280px] h-8 md:w-[350px] md:h-10 border border-slate-300 rounded-lg pl-5 focus:ring-color focus:border-color pr-3 shadow-sm focus:outline-none self-center"
             />
             {eye ? (
-              <FaEye
+              <FaEyeSlash
                 onClick={() => setEye(false)}
                 className="absolute right-3 bottom-2 md:right-4 md:bottom-3 text-lg hover:text-color cursor-pointer transition-all duration-300 ease-out"
               />
             ) : (
-              <FaEyeSlash
+              <FaEye
                 onClick={() => setEye(true)}
                 className="absolute right-3 bottom-2 md:right-4 md:bottom-3 text-lg hover:text-color cursor-pointer transition-all duration-300 ease-out"
               />

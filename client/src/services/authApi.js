@@ -68,19 +68,10 @@ export function loginCustomer(loginDetails, navigate) {
         expires: 2,
         secure: true,
       });
-      Cookies.set("refreshToken", response.data.refreshToken, {
-        sameSite: "none",
-        expires: 7,
-        secure: true,
-      });
 
       localStorage.setItem(
         "accessToken",
         JSON.stringify(response.data.accessToken)
-      );
-      localStorage.setItem(
-        "refreshToken",
-        JSON.stringify(response.data.refreshToken)
       );
       localStorage.setItem("customer", JSON.stringify(response.data.customer));
 

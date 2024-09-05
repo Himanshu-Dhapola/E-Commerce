@@ -38,11 +38,13 @@ export const singleFilter = [
     id: "price",
     name: "Price",
     options: [
-      { value: "149-399", label: "$149 to $399" },
-      { value: "399-999", label: "$399 to $999" },
-      { value: "999-1599", label: "$999 to $1599" },
-      { value: "1599-1999", label: "$1599 to $1999" },
-      { value: "1999-2999", label: "$1999 to $2999" },
+      { value: "0-999", label: "$0 to $999" },
+      { value: "1000-4999", label: "$1000 to $4999" },
+      { value: "5000-9999", label: "$5000 to $9999" },
+      { value: "10000-19999", label: "$10000 to $19999" },
+      { value: "20000-4999", label: "$20000 to $49999" },
+      { value: "50000-99999", label: "$50000 to $99999" },
+      { value: "1Lac & Above", label: "1Lac & Above" },
     ],
   },
   {

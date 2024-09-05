@@ -33,9 +33,6 @@ const customerSchema = new mongoose.Schema(
       type: String,
       default: 'Customer',
     },
-    refreshToken: {
-      type: String,
-    },
     address: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -72,21 +69,6 @@ customerSchema.methods.generateAccessToken = function () {
     process.env.ACCESS_TOKEN_SECRET,
     {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
-    }
-  );
-};
-
-customerSchema.methods.generateRefreshToken = function () {
-  return jwt.sign(
-    {
-      _id: this._id,
-      firstName: this.firstName,
-      lastName: this.lastName,
-      email: this.email,
-    },
-    process.env.REFRESH_TOKEN_SECRET,
-    {
-      expiresIn: process.env.REFRESH_TOKEN_EXPIRY,
     }
   );
 };

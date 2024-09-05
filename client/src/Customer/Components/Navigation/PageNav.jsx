@@ -35,14 +35,8 @@ export default function PageNav() {
 
   const handleLogout = () => {
     localStorage.removeItem("accessToken");
-    localStorage.removeItem("refreshToken");
     localStorage.removeItem("customer");
     Cookies.set("accessToken", "", {
-      sameSite: "none",
-      expires: 0,
-      secure: true,
-    });
-    Cookies.set("refreshToken", "", {
       sameSite: "none",
       expires: 0,
       secure: true,

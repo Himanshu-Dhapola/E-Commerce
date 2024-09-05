@@ -104,18 +104,7 @@ const getAllProducts = async (req, res) => {
 
     let query = await Product.find();
 
-    // if (category) {
-    //   const existsCategory = await Category.findOne({ name: category });
-    //   if (existsCategory) {  
-    //     query = query.where('category').equals(existsCategory._id);
-    //   } else {
-    //     return res.status(201).json({
-    //       data: { content: [], currentPage: 1, totalPages: 0 },
-    //       message: 'No Product Found With this selected Category',
-    //       success: true,
-    //     });
-    //   }
-    // }
+    console.log(query)
 
     if (color) {
       const colorSet = new Set(

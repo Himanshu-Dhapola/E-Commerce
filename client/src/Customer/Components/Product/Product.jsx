@@ -23,9 +23,7 @@ import {
 import ProductCard from "./ProductCard";
 import { filters, singleFilter } from "./FilterData";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
-import {
-  useDispatch,useSelector
-} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { findProducts } from "../../../services/productApi";
 import PageNav from "../Navigation/PageNav";
 import Footer from "../Footer/Footer";
@@ -85,17 +83,10 @@ export default function Product() {
     navigate({ search: `?${query}` });
   };
 
-  const handlePaginationChange = (e, value) => {
-    const searchParams = new URLSearchParams(location.search);
-    searchParams.set("page", value);
-    const query = searchParams.toString();
-    navigate({ search: `?${query}` });
-  };
-
 
   return (
     <div className="bg-smoke font-Poppins">
-      <PageNav/>
+      <PageNav />
       <div>
         {/* Mobile filter dialog */}
         <Dialog
@@ -406,7 +397,7 @@ export default function Product() {
           </section> */}
         </main>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
