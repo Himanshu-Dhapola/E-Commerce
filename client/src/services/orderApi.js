@@ -9,7 +9,7 @@ export function createOrder({ customerAddress, navigate }) {
     const token = localStorage?.getItem("accessToken");
     try {
       const response = await axios.post(
-        `https://himanshu-dhapola-easby.vercel.app/api/v1/order`,
+        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/order`,
         customerAddress,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -43,7 +43,7 @@ export async function getAllOrders() {
   let result = {};
   const token = localStorage?.getItem("accessToken");
   try {
-    const response = await axios.get(`https://himanshu-dhapola-easby.vercel.app/api/v1/order/`,
+    const response = await axios.get(`https://himanshu-dhapola-easby-server.onrender.com/api/v1/order/`,
       {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
@@ -78,7 +78,7 @@ export function getOrderById(orderId) {
     dispatch(setLoading(true));
     const token = localStorage?.getItem("accessToken");
     try {
-      const response = await axios.get(`https://himanshu-dhapola-easby.vercel.app/api/v1/order/${orderId}`,
+      const response = await axios.get(`https://himanshu-dhapola-easby-server.onrender.com/api/v1/order/${orderId}`,
         {
           headers: { Authorization: `Bearer ${token}` }, 
           withCredentials: true,
