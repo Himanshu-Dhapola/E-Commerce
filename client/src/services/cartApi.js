@@ -41,7 +41,7 @@ export function addItemToCart(cartData) {
     try {
      if (token) {
         const response = await axios.put(
-  `${BASE_URI_API}/api/v1/cart/add`,
+  `https://easby-server.onrender.com/api/v1/cart/add`,
   cartData, // Pass the data (cartData) as the second argument
   {
     headers: { Authorization: `Bearer ${token}` }, // Configuration object
