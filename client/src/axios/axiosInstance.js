@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URI_API = "https://himanshu-dhapola-easby.vercel.app";
+export const BASE_URI_API = "https://himanshu-dhapola-easby-server.onrender.com";
 const getToken = () => localStorage?.getItem("accessToken");
 console.log(getToken());
 
