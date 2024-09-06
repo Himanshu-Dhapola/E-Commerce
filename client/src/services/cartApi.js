@@ -12,7 +12,7 @@ export function getCartItem() {
   return async (dispatch) => {
     const token = localStorage?.getItem("accessToken")
     try {
-      const response = await axios.get(`https://himanshu-dhapola-easby.vercel.app/api/v1/cart`,
+      const response = await axios.get(`https://himanshu-dhapola-easby-server.onrender.com/api/v1/cart`,
       {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
@@ -44,7 +44,7 @@ export function addItemToCart(cartData) {
     try {
      if (token) {
         const response = await axios.put(
-        `https://himanshu-dhapola-easby.vercel.app/api/v1/cart/add`,
+        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/cart/add`,
         cartData, 
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -81,7 +81,7 @@ export function removeCartItem(cartItemId) {
     const token = localStorage?.getItem("accessToken");
     try {
       const response = await axios.delete(
-        `https://himanshu-dhapola-easby.vercel.app/api/v1/cart_items/${cartItemId}`,
+        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/cart_items/${cartItemId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
@@ -115,7 +115,7 @@ export function updateCartItem(cartData) {
     const token = localStorage?.getItem("accessToken");
     try {
       const response = await axios.put(
-        `https://himanshu-dhapola-easby.vercel.app/api/v1/cart_items/${cartData.cartItemId}`,
+        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/cart_items/${cartData.cartItemId}`,
         cartData,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -141,7 +141,7 @@ export function emptyCart() {
   return async (dispatch) => {
     const token = localStorage?.getItem("accessToken");
     try {
-      const response = await axios.post(`https://himanshu-dhapola-easby.vercel.app/api/v1/cart/empty-cart`,
+      const response = await axios.post(`https://himanshu-dhapola-easby-server.onrender.com/api/v1/cart/empty-cart`,
           {
             headers: { Authorization: `Bearer ${token}` },
             withCredentials: true,
