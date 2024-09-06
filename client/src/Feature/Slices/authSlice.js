@@ -5,9 +5,7 @@ const initialState = {
     ? JSON.parse(localStorage.getItem("customer"))
     : null,
   isLoading: false,
-  accessToken: localStorage.getItem("accessToken")
-    ? JSON.parse(localStorage.getItem("accessToken"))
-    : null,
+  accessToken: localStorage?.getItem("accessToken")
 };
 
 const authSlice = createSlice({
