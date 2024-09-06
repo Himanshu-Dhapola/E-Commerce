@@ -1,4 +1,3 @@
-import { axiosInstance } from "../axios/axiosInstance";
 import {
   setLoading,
   setCustomer,
@@ -13,8 +12,8 @@ export function registerCustomer(customerData, navigate) {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     try {
-      const response = await axiosInstance.post(
-        `/api/v1/customer/register`,
+      const response = await axios.post(
+        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/customer/register`,
         customerData
       );
 
@@ -44,8 +43,8 @@ export function loginCustomer(loginDetails, navigate) {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     try {
-      const response = await axiosInstance.post(
-        `/api/v1/customer/login`,
+      const response = await axios.post(
+        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/customer/login`,
         loginDetails
       );
 
