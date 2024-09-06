@@ -11,8 +11,13 @@ import axios from "axios"
 
 export function getCartItem() {
   return async (dispatch) => {
+    const token = localStorage?.getItem("accessToken")
     try {
-      const response = await axiosInstance.get(`/api/v1/cart`);
+      const response = await axios.get(`https://easby-server.onrender.com/api/v1/cart`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+        withCredentials: true,
+      });
 
       if (!response.data.success) {
         throw new Error(response.data.message);
