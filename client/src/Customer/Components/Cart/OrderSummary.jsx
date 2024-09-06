@@ -6,7 +6,7 @@ import { getOrderById } from "../../../services/orderApi";
 import { useLocation } from "react-router";
 import { useSelector } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
-import { axiosInstance } from "../../../axios/axiosInstance";
+import axios from "axios"
 
 export default function OrderSummary() {
   const dispatch = useDispatch();
@@ -21,9 +21,14 @@ export default function OrderSummary() {
   }, [orderId]);
 
   const handlePayment = async () => {
+    const token = localStorage?.getItem("accessToken");
     const stripe = await loadStripe(import.meta.env.VITE_PUBLISHABLE_KEY);
     const body = { product: cart };
-    const response = await axiosInstance.post(`/api/v1/payment`, body);
+    const response = await axios.post(`https://easby-server.onrender.com/api/v1/payment`, body,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+        withCredentials: true,
+      });
     const session = response.data;
     const result = stripe.redirectToCheckout({
       sessionId: session.id,
