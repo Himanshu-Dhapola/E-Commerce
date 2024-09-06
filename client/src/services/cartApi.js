@@ -1,4 +1,3 @@
-import { axiosInstance } from "../axios/axiosInstance";
 import { toast } from "react-hot-toast";
 import {
   setCart,
@@ -46,13 +45,12 @@ export function addItemToCart(cartData) {
     try {
      if (token) {
         const response = await axios.put(
-  `https://easby-server.onrender.com/api/v1/cart/add`,
-  cartData, // Pass the data (cartData) as the second argument
-  {
-    headers: { Authorization: `Bearer ${token}` }, // Configuration object
-    withCredentials: true,
-  }
-);
+        `https://easby-server.onrender.com/api/v1/cart/add`,
+        cartData, 
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        });
         if (!response.data.success) {
           throw new Error(response.data.message);
         }
@@ -81,10 +79,14 @@ export function addItemToCart(cartData) {
 
 export function removeCartItem(cartItemId) {
   return async (dispatch) => {
+    const token = localStorage?.getItem("accessToken");
     try {
-      const response = await axiosInstance.delete(
-        `/api/v1/cart_items/${cartItemId}`
-      );
+      const response = await axios.delete(
+        `https://easby-server.onrender.com/api/v1/cart_items/${cartItemId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        });
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
@@ -111,11 +113,15 @@ export function removeCartItem(cartItemId) {
 
 export function updateCartItem(cartData) {
   return async (dispatch) => {
+    const token = localStorage?.getItem("accessToken");
     try {
-      const response = await axiosInstance.put(
-        `/api/v1/cart_items/${cartData.cartItemId}`,
-        cartData
-      );
+      const response = await axios.put(
+        `https://easby-server.onrender.com/api/v1/cart_items/${cartData.cartItemId}`,
+        cartData,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        });
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
@@ -134,8 +140,13 @@ export function updateCartItem(cartData) {
 
 export function emptyCart() {
   return async (dispatch) => {
+    const token = localStorage?.getItem("accessToken");
     try {
-      const response = await axiosInstance.post(`/api/v1/cart/empty-cart`);
+      const response = await axios.post(`https://easby-server.onrender.com/api/v1/cart/empty-cart`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+            withCredentials: true,
+          });
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
