@@ -1,4 +1,4 @@
-import { axiosInstance } from "../axios/axiosInstance";
+import axios from "axios"
 import { toast } from "react-hot-toast";
 import {  setOrder, setLoading } from "../Feature/Slices/orderSlice";
 
@@ -6,11 +6,15 @@ export function createOrder({ customerAddress, navigate }) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
+    const token = localStorage?.getItem("accessToken");
     try {
-      const response = await axiosInstance.post(
-        `/api/v1/order`,
+      const response = await axios.post(
+        `https://easby-server.onrender.com/api/v1/order`,
         customerAddress,
-      );
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        });
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -37,8 +41,13 @@ export function createOrder({ customerAddress, navigate }) {
 export async function getAllOrders() {
   const toastId = toast.loading("Loading...");
   let result = {};
+  const token = localStorage?.getItem("accessToken");
   try {
-    const response = await axiosInstance.get(`/api/v1/order/`);
+    const response = await axios.get(`https://easby-server.onrender.com/api/v1/order/`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+        withCredentials: true,
+      });
     if (!response.data.success) {
       throw new Error(response.data.message);
     }
@@ -67,8 +76,13 @@ export function getOrderById(orderId) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
+    const token = localStorage?.getItem("accessToken");
     try {
-      const response = await axiosInstance.get(`/api/v1/order/${orderId}`);
+      const response = await axios.get(`https://easby-server.onrender.com/api/v1/order/${orderId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` }, 
+          withCredentials: true,
+        });
 
       if (!response.data.success) {
         throw new Error(response.data.message);
