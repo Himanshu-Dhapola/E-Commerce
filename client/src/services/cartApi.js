@@ -34,7 +34,8 @@ export function addItemToCart(cartData) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
-    const token = localStorage.getItem("accessToken");
+    const token = localStorage?.getItem("accessToken");
+    console.log(token)
     try {
      if (token) {
         const response = await axiosInstance.put(`/api/v1/cart/add`, cartData);
