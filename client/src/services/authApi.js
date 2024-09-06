@@ -86,7 +86,7 @@ export function loginCustomer(loginDetails, navigate) {
 
 export function getCustomerDetails(accessToken, navigate) {
   return async (dispatch) => {
-    const token = localStorage.getItem("accessToken");
+    const token = localStorage?.getItem("accessToken");
     try {
       const response = await axios.get(
         `https://easby-server.onrender.com/api/v1/customer/details`,
