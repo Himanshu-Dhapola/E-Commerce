@@ -1,19 +1,18 @@
-import { axiosInstance } from "../axios/axiosInstance";
 import { toast } from "react-hot-toast";
 import {
   setProducts,
   setProduct,
   setLoading,
 } from "../Feature/Slices/productSlice";
+import axios from "axios"
 
 export function findProductById(productData) {
   return async (dispatch) => {
     dispatch(setLoading(true));
+    const token = localStorage?.getItem("accessToken");
     const { productId } = productData;
     try {
-      const response = await axiosInstance.get(
-        `/api/v1/products/${productId}`
-      );
+      const response = await axios.get(`https://easby-server.onrender.com/api/v1/products/${productId}`);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -31,11 +30,10 @@ export function searchProducts(searchProduct,navigate) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
+    const token = localStorage?.getItem("accessToken");
     try {
-      const response = await axiosInstance.get(
-        `/api/v1/products/search/${searchProduct}`
-      );
-
+      const response = await axios.get(
+        `https://easby-server.onrender.com/api/v1/products/search/${searchProduct}`);
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
@@ -59,10 +57,10 @@ export function categorySearch(category, navigate) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
+    const token = localStorage?.getItem("accessToken");
     try {
-      const response = await axiosInstance.get(
-        `/api/v1/products/category/${category}`
-      );
+      const response = await axios.get(
+        `https://easby-server.onrender.com/api/v1/products/category/${category}`);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
