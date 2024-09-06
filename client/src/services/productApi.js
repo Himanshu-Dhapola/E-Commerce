@@ -11,7 +11,7 @@ export function findProductById(productData) {
     dispatch(setLoading(true));
     const { productId } = productData;
     try {
-      const response = await axios.get(`https://himanshu-dhapola-easby.vercel.app/api/v1/products/${productId}`);
+      const response = await axios.get(`https://himanshu-dhapola-easby-server.onrender.com/api/v1/products/${productId}`);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -31,7 +31,7 @@ export function searchProducts(searchProduct,navigate) {
     dispatch(setLoading(true));
     try {
       const response = await axios.get(
-        `https://himanshu-dhapola-easby.vercel.app/api/v1/products/search/${searchProduct}`);
+        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/products/search/${searchProduct}`);
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
@@ -57,7 +57,7 @@ export function categorySearch(category, navigate) {
     dispatch(setLoading(true));
     try {
       const response = await axios.get(
-        `https://himanshu-dhapola-easby.vercel.app/api/v1/products/category/${category}`);
+        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/products/category/${category}`);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
