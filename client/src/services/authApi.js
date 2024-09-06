@@ -73,7 +73,6 @@ export function loginCustomer(loginDetails, navigate) {
         "accessToken",
         response.data.accessToken
       );
-      console.log("login: ",response);
       localStorage.setItem("customer", JSON.stringify(response.data.customer));
       navigate("/");
     } catch (error) {
@@ -104,7 +103,6 @@ export function getCustomerDetails(accessToken, navigate) {
       dispatch(setCustomer(response.data.data));
 
       localStorage.setItem("accessToken", accessToken);
-      console.log("get: ",response);
       localStorage.setItem("customer", JSON.stringify(response.data.data));
 
       navigate("/");
