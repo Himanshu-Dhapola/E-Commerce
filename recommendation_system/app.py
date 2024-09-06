@@ -3,7 +3,7 @@ from recommendation import recommend_products
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": ["https://easyby-client.onrender.com"]}})
+CORS(app, resources={r"/*": {"origins": ["https://himanshu-dhapola-easby.onrender.com"]}})
 
 
 @app.route('/recommend/<product_id>', methods=['GET'])
