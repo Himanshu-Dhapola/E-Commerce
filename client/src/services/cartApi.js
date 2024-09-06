@@ -35,9 +35,11 @@ export function addItemToCart(cartData) {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     try {
-      const response = await axiosInstance.put(`/api/v1/cart/add`, cartData);
-      if (!response.data.success) {
-        throw new Error(response.data.message);
+     if (token) {
+        const response = await axiosInstance.put(`/api/v1/cart/add`, cartData);
+        if (!response.data.success) {
+          throw new Error(response.data.message);
+        }
       }
       dispatch(getCartItem());
       toast.success("Product added to cart", {
