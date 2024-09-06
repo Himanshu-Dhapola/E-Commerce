@@ -22,8 +22,8 @@ const payment = async (req, res) => {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: 'http://localhost:5173/success',
-      cancel_url: 'http://localhost:5173/failed',
+      success_url: 'https://himanshu-dhapola-easby.onrender.com/success',
+      cancel_url: 'https://himanshu-dhapola-easby.onrender.com/failed',
     });
 
     return res.status(200).json({
