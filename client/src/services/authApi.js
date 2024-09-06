@@ -70,7 +70,7 @@ export function loginCustomer(loginDetails, navigate) {
 
       localStorage.setItem(
         "accessToken",
-        JSON.stringify(response.data.accessToken)
+        response.data.accessToken
       );
       localStorage.setItem("customer", JSON.stringify(response.data.customer));
       navigate("/");
@@ -97,7 +97,7 @@ export function getCustomerDetails(accessToken, navigate) {
       dispatch(setAccessToken(accessToken));
       dispatch(setCustomer(response.data.data));
 
-      localStorage.setItem("accessToken", JSON.stringify(accessToken));
+      localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("customer", JSON.stringify(response.data.data));
 
       navigate("/");
