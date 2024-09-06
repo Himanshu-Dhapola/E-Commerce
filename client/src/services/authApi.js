@@ -89,7 +89,7 @@ export function getCustomerDetails(accessToken, navigate) {
     const token = localStorage?.getItem("accessToken");
     try {
       const response = await axios.get(
-        `https://himanshu-dhapola-easby.vercel.app/api/v1/customer/details`,
+        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/customer/details`,
         {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
