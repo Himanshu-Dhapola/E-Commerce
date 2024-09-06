@@ -78,6 +78,8 @@ export function addItemToCart(cartData) {
 
 export function removeCartItem(cartItemId) {
   return async (dispatch) => {
+    const toastId = toast.loading("Loading...");
+    dispatch(setLoading(true));
     const token = localStorage?.getItem("accessToken");
     try {
       const response = await axios.delete(
@@ -107,11 +109,14 @@ export function removeCartItem(cartItemId) {
       });
     }
     dispatch(setLoading(false));
+    toast.dismiss(toastId);
   };
 }
 
 export function updateCartItem(cartData) {
   return async (dispatch) => {
+    const toastId = toast.loading("Loading...");
+    dispatch(setLoading(true));
     const token = localStorage?.getItem("accessToken");
     try {
       const response = await axios.put(
@@ -134,6 +139,8 @@ export function updateCartItem(cartData) {
         },
       });
     }
+    dispatch(setLoading(false));
+    toast.dismiss(toastId);
   };
 }
 
