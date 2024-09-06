@@ -6,6 +6,7 @@ import {
 } from "../Feature/Slices/authSlice";
 import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
+import axios from "axios"
 
 export function registerCustomer(customerData, navigate) {
   return async (dispatch) => {
@@ -72,7 +73,7 @@ export function loginCustomer(loginDetails, navigate) {
         "accessToken",
         response.data.accessToken
       );
-      localStorage.setItem("customer", JSON.stringify(response.data.customer));
+      localStorage.setItem("customer", response.data.customer);
       navigate("/");
     } catch (error) {
       toast.error(error.response.data.message);
@@ -85,10 +86,14 @@ export function loginCustomer(loginDetails, navigate) {
 
 export function getCustomerDetails(accessToken, navigate) {
   return async (dispatch) => {
+    const token = localStorage.getItem("accessToken");
     try {
-      const response = await axiosInstance.get(
-        `/api/v1/customer/details`,
-      );
+      const response = await axios.get(
+        `https://easby-server.onrender.com/api/v1/customer/details`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        });
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -98,7 +103,7 @@ export function getCustomerDetails(accessToken, navigate) {
       dispatch(setCustomer(response.data.data));
 
       localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem("customer", JSON.stringify(response.data.data));
+      localStorage.setItem("customer",response.data.data);
 
       navigate("/");
     } catch (error) {
