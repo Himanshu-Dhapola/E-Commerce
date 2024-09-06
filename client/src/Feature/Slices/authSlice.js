@@ -2,8 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   customer: localStorage.getItem("customer")
-    ? localStorage.getItem("customer")
-    : null,
   isLoading: false,
   accessToken: localStorage?.getItem("accessToken")
 };
