@@ -65,7 +65,7 @@ export function loginCustomer(loginDetails, navigate) {
 
       Cookies.set("accessToken", response.data.accessToken, {
         sameSite: "none",
-        expires: 2,
+        expires: 30,
         secure: true,
       });
 
@@ -73,8 +73,8 @@ export function loginCustomer(loginDetails, navigate) {
         "accessToken",
         response.data.accessToken
       );
-      console.log("login",localStorage.setItem("customer",response.data.customer));
-      localStorage.setItem("customer", response.data.customer);
+      console.log("login: ",response);
+      localStorage.setItem("customer", JSON.stringify(response.data.customer));
       navigate("/");
     } catch (error) {
       toast.error(error.response.data.message);
@@ -104,8 +104,8 @@ export function getCustomerDetails(accessToken, navigate) {
       dispatch(setCustomer(response.data.data));
 
       localStorage.setItem("accessToken", accessToken);
-      console.log("get: ",localStorage.setItem("customer",response.data.data));
-      localStorage.setItem("customer",response.data.data);
+      console.log("get: ",response);
+      localStorage.setItem("customer", JSON.stringify(response.data.data));
 
       navigate("/");
     } catch (error) {
