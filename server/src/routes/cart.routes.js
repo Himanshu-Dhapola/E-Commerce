@@ -10,6 +10,6 @@ const router = Router();
 
 router.route('/').get(verifyJWT, findCustomerCart);
 router.route('/add').put(verifyJWT, addItemToCart);
-router.route('/empty-cart').post(verifyJWT, emptyCart);
+router.route('/empty-cart').post(emptyCart);
 
 export default router;
