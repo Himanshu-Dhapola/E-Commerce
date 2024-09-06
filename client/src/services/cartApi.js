@@ -6,6 +6,8 @@ import {
   setLoading,
   clearCart,
 } from "../Feature/Slices/cartSlice";
+import axios from "axios"
+
 
 export function getCartItem() {
   return async (dispatch) => {
@@ -38,7 +40,14 @@ export function addItemToCart(cartData) {
     console.log(token)
     try {
      if (token) {
-        const response = await axiosInstance.put(`/api/v1/cart/add`, cartData);
+        const response = await axios.put(
+  `${BASE_URI_API}/api/v1/cart/add`,
+  cartData, // Pass the data (cartData) as the second argument
+  {
+    headers: { Authorization: `Bearer ${token}` }, // Configuration object
+    withCredentials: true,
+  }
+);
         if (!response.data.success) {
           throw new Error(response.data.message);
         }
