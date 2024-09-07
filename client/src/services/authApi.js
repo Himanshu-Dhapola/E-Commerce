@@ -9,7 +9,13 @@ import axios from "axios"
 
 export function registerCustomer(customerData, navigate) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    const toastId = toast.loading("Loading...", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     dispatch(setLoading(true));
     try {
       const response = await axios.post(
@@ -30,7 +36,13 @@ export function registerCustomer(customerData, navigate) {
       });
       navigate("/login");
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.message, {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
       navigate("/signup");
     }
     dispatch(setLoading(false));
@@ -40,7 +52,13 @@ export function registerCustomer(customerData, navigate) {
 
 export function loginCustomer(loginDetails, navigate) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    const toastId = toast.loading("Loading...", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     dispatch(setLoading(true));
     try {
       const response = await axios.post(
@@ -75,7 +93,13 @@ export function loginCustomer(loginDetails, navigate) {
       localStorage.setItem("customer", JSON.stringify(response.data.customer));
       navigate("/");
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.message, {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
       navigate("/login");
     }
     dispatch(setLoading(false));
