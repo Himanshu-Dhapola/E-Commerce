@@ -102,7 +102,7 @@ export default function ProductDetails() {
 
           <div className="lg:row-span-3">
             <h2 className="sr-only">Product information</h2>
-            <div className="text-base md:text-2xl tracking-tight flex justify-around">
+            <div className="text-base lg:w-[550px] md:text-2xl flex justify-around">
               <p className="text-black">&#8377;{product?.discountedPrice}</p>
               <p className="text-gray line-through">&#8377;{product?.price}</p>
               <p className="text-green">{product?.discountPercentage}% off</p>
