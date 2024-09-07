@@ -38,7 +38,13 @@ export function getCartItem() {
 
 export function addItemToCart(cartData) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    const toastId = toast.loading("Loading...", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     dispatch(setLoading(true));
     const token = localStorage?.getItem("accessToken");
     try {
@@ -78,7 +84,13 @@ export function addItemToCart(cartData) {
 
 export function removeCartItem(cartItemId) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    const toastId = toast.loading("Loading...", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     dispatch(setLoading(true));
     const token = localStorage?.getItem("accessToken");
     try {
@@ -115,7 +127,13 @@ export function removeCartItem(cartItemId) {
 
 export function updateCartItem(cartData) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    const toastId = toast.loading("Loading...", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     dispatch(setLoading(true));
     const token = localStorage?.getItem("accessToken");
     try {
