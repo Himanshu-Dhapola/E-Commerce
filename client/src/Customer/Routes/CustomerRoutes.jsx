@@ -9,6 +9,7 @@ import Signup from "../Components/Signup/Signup";
 import Success from "../Components/Payment/Success";
 import Failed from "../Components/Payment/Failed";
 import PrivateRoute from "./PrivateRoutes";
+import OrderHistory from "../Components/Navigation/OrderHistory";
 
 export default function CustomerRoutes() {
   return (
@@ -46,6 +47,14 @@ export default function CustomerRoutes() {
           element={
             <PrivateRoute>
               <Failed />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route
+          path="/order-history"
+          element={
+            <PrivateRoute>
+              <OrderHistory />
             </PrivateRoute>
           }
         ></Route>
