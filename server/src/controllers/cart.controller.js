@@ -34,7 +34,7 @@ const findCustomerCart = async (req, res) => {
     }
 
     cart.totalPrice = totalPrice;
-    cart.discount = totalPrice - totalDiscountPrice;;
+    cart.discount = totalPrice - totalDiscountPrice;
     cart.totalItem = totalItem;
     cart.totalDiscountedPrice = totalDiscountPrice;
 
