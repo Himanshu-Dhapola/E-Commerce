@@ -9,10 +9,6 @@ import axios from "axios";
 import PageNav from "../Navigation/PageNav";
 import Footer from "../Footer/Footer";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function ProductDetails() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
