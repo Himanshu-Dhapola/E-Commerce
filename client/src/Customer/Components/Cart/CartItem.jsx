@@ -75,7 +75,7 @@ export default function CartItem({ item }) {
               {item.product?.brand}
             </span>
           </p>
-          <div className="md:text-base  sm:px-5  text-[10px] font-semibold tracking-tight flex justify-between space-x-8">
+          <div className="md:text-base text-[10px] sm:px-5 font-semibold tracking-tight flex justify-between space-x-8">
             <p className="text-black">&#8377;{item.discountedPrice}</p>
             <p className="text-gray line-through">&#8377;{item.price}</p>
             <p className="text-green">
@@ -85,7 +85,7 @@ export default function CartItem({ item }) {
         </div>
       </div>
       <div className="flex flex-col items-start md:flex-row md:items-start md:space-x-4 pt-3">
-        <div className="flex items-center space-x-2 md:space-x-5 pl-3 sm:pl-12 md:pl-14 text-[12px] md:text-xl">
+        <div className="flex items-center space-x-2 md:space-x-5 pl-3 sm:pl-5 text-[12px] md:text-xl">
           {step !== "3" && (
             <>
               <LuMinusCircle
@@ -107,7 +107,7 @@ export default function CartItem({ item }) {
             </>
           )}
           {step === "3" && (
-            <span className="border text-xs md:text-lg md:ml-8 font-semibold px-2 rounded-md text-center">
+            <span className="border text-xs md:text-lg md:ml-7 font-semibold px-2 rounded-md text-center">
               Quantity: {item.quantity}
             </span>
           )}
