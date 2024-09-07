@@ -120,3 +120,44 @@ export function getOrderById(orderId) {
     toast.dismiss(toastId);
   };
 }
+
+export function getOrderHistory(navigate) {
+  return async (dispatch) => {
+    const toastId = toast.loading("Loading...", {
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
+    dispatch(setLoading(true));
+    const token = localStorage?.getItem("accessToken");
+    try {
+      const response = await axios.get(
+        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/order_history`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        }
+      );
+
+      if (!response.data.success) {
+        throw new Error(response.data.message);
+      }
+
+      dispatch(setOrders(response.data.data));
+      navigate("/order-history");
+    } catch (error) {
+      toast.error(error.response.data.message, {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+    }
+    dispatch(setLoading(false));
+    toast.dismiss(toastId);
+  };
+}
+
