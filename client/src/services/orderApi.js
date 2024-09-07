@@ -1,26 +1,27 @@
-import axios from "axios"
+import axios from "axios";
 import { toast } from "react-hot-toast";
-import {  setOrder, setLoading } from "../Feature/Slices/orderSlice";
+import { setOrder, setOrders, setLoading } from "../Feature/Slices/orderSlice";
 
 export function createOrder({ customerAddress, navigate }) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...", {
-        style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
-        },
-      });
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
     dispatch(setLoading(true));
     const token = localStorage?.getItem("accessToken");
     try {
       const response = await axios.post(
-        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/order`,
+        `http://localhost:2000/api/v1/order`,
         customerAddress,
         {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
-        });
+        }
+      );
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -46,20 +47,19 @@ export function createOrder({ customerAddress, navigate }) {
 
 export async function getAllOrders() {
   const toastId = toast.loading("Loading...", {
-        style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
-        },
-      });
+    style: {
+      borderRadius: "10px",
+      background: "#333",
+      color: "#fff",
+    },
+  });
   let result = {};
   const token = localStorage?.getItem("accessToken");
   try {
-    const response = await axios.get(`https://himanshu-dhapola-easby-server.onrender.com/api/v1/order/`,
-      {
-        headers: { Authorization: `Bearer ${token}` },
-        withCredentials: true,
-      });
+    const response = await axios.get(`http://localhost:2000/api/v1/order/`, {
+      headers: { Authorization: `Bearer ${token}` },
+      withCredentials: true,
+    });
     if (!response.data.success) {
       throw new Error(response.data.message);
     }
@@ -87,25 +87,27 @@ export async function getAllOrders() {
 export function getOrderById(orderId) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...", {
-        style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
-        },
-      });
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
     dispatch(setLoading(true));
     const token = localStorage?.getItem("accessToken");
     try {
-      const response = await axios.get(`https://himanshu-dhapola-easby-server.onrender.com/api/v1/order/${orderId}`,
+      const response = await axios.get(
+        `http://localhost:2000/api/v1/order/${orderId}`,
         {
-          headers: { Authorization: `Bearer ${token}` }, 
+          headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
-        });
+        }
+      );
 
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
-      
+
       dispatch(setOrder(response.data.data));
     } catch (error) {
       toast.error(error.response.data.message, {
@@ -134,7 +136,7 @@ export function getOrderHistory(navigate) {
     const token = localStorage?.getItem("accessToken");
     try {
       const response = await axios.get(
-        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/order_history`,
+        `http://localhost:2000/api/v1/order_history`,
         {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
@@ -160,4 +162,3 @@ export function getOrderHistory(navigate) {
     toast.dismiss(toastId);
   };
 }
-
