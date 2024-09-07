@@ -171,7 +171,6 @@ export function emptyCart() {
             headers: { Authorization: `Bearer ${token}` },
             withCredentials: true,
           });
-      console.log(response)
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
