@@ -2,6 +2,7 @@ import { Address } from '../models/address.model.js';
 import { Order } from '../models/order.model.js';
 import { OrderItem } from '../models/orderItem.model.js';
 import { Cart } from '../models/cart.model.js';
+import { Customer } from '../models/customer.model.js'
 
 const findCustomerCart = async (customerId) => {
   const cart = await Cart.findOne({ customer: customerId }).populate(
@@ -69,8 +70,8 @@ const createOrder = async (req, res) => {
       });
 
       orderItems.push(orderItem);
-      totalPrice += item.price * item.quantity;
-      totalDiscountedPrice += item.discountedPrice * item.quantity;
+      totalPrice += item.price;
+      totalDiscountedPrice += item.discountedPrice;
       totalItem += item.quantity;
     }
 
@@ -99,7 +100,6 @@ const createOrder = async (req, res) => {
   }
 };
 
-
 const findOrderById = async (req, res) => {
   try {
     const orderId = req.params.id;
@@ -115,17 +115,67 @@ const findOrderById = async (req, res) => {
       });
     }
 
+    const customer = await Customer.findById(order.customer._id);
+
+    if (!customer) {
+      return res.status(404).json({
+        success: false,
+        message: 'Customer not found',
+      });
+    }
+
+    if (!customer.orders.includes(order._id)) {
+      customer.orders.push(order._id);
+      await customer.save();
+    }
+
     return res.status(200).json({
       data: order,
       success: true,
-      message: 'Order Found Successfully',
+      message: "Order found and added to customer's orders successfully",
     });
   } catch (error) {
-    return res.status(200).json({
+    console.error(error);
+    return res.status(500).json({
       success: false,
       message: 'Something went wrong while finding order',
     });
   }
 };
 
-export { createOrder, findOrderById };
+
+const orderHistory = async (req, res) => {
+  try {
+    const customerId = req.customer._id;
+
+    const customer = await Customer.findById(customerId).populate({
+      path: 'orders',
+      populate: {
+        path: 'orderItems',
+        populate: {
+          path: 'product',
+        },
+      },
+    });
+
+    if (!customer) {
+      return res.status(404).json({
+        success: false,
+        message: 'Customer not found',
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: 'Order History retrieved successfully',
+      data: customer.orders,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: 'Something went wrong while fetching order history',
+    });
+  }
+};
+
+export { createOrder, findOrderById, orderHistory };
