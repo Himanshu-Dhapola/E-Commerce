@@ -15,7 +15,7 @@ export default function CartItem({ item }) {
 
   useEffect(() => {
     const handleResize = () => {
-      setWordLimit(window.innerWidth < 768 ? 10 : 20);
+      setWordLimit(window.innerWidth < 768 ? 20 : 30);
     };
 
     handleResize();
