@@ -136,7 +136,7 @@ export function getOrderHistory(navigate) {
     const token = localStorage?.getItem("accessToken");
     try {
       const response = await axios.get(
-        `http://localhost:2000/api/v1/order_history`,
+        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/order_history`,
         {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
