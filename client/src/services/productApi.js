@@ -27,7 +27,13 @@ export function findProductById(productData) {
 
 export function searchProducts(searchProduct,navigate) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    const toastId = toast.loading("Loading...", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     dispatch(setLoading(true));
     try {
       const response = await axios.get(
@@ -53,7 +59,13 @@ export function searchProducts(searchProduct,navigate) {
 
 export function categorySearch(category, navigate) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    const toastId = toast.loading("Loading...", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     dispatch(setLoading(true));
     try {
       const response = await axios.get(
