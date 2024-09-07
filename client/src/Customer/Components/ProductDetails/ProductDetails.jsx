@@ -20,7 +20,7 @@ export default function ProductDetails() {
   const id = useParams();
   const [selectedSize, setSelectedSize] = useState(null);
   const [recommendedProducts, setRecommendedProducts] = useState([]);
-  const [showPopup, setShowPopup] = useState(false); // Popup visibility state
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleAddToCart = () => {
     if (!localStorage.getItem("accessToken")) {
