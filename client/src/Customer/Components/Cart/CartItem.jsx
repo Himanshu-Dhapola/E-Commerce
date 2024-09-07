@@ -85,7 +85,7 @@ export default function CartItem({ item }) {
         </div>
       </div>
       <div className="flex flex-col items-start md:flex-row md:items-start md:space-x-4 pt-3">
-        <div className="flex items-center space-x-2 md:space-x-5 pl-5 md:pl-7 text-[12px] md:text-xl">
+        <div className="flex items-center space-x-2 md:space-x-5 pl-3 sm:pl-12 md:pl-14 text-[12px] md:text-xl">
           {step !== "3" && (
             <>
               <LuMinusCircle
