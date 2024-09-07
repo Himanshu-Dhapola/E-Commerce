@@ -8,6 +8,13 @@ import axios from "axios"
 
 export function findProductById(productData) {
   return async (dispatch) => {
+    const toastId = toast.loading("Loading...", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     dispatch(setLoading(true));
     const { productId } = productData;
     try {
@@ -16,7 +23,6 @@ export function findProductById(productData) {
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
-
       dispatch(setProduct(response.data.data));
     } catch (error) {
       // toast.error(error.response.data.message);
