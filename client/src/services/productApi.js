@@ -28,6 +28,7 @@ export function findProductById(productData) {
       // toast.error(error.response.data.message);
     }
     dispatch(setLoading(false));
+     toast.dismiss(toastId);
   };
 }
 
