@@ -165,7 +165,6 @@ export function updateCartItem(cartData) {
 export function emptyCart() {
   return async (dispatch) => {
     const token = localStorage?.getItem("accessToken");
-    console.log(token);
     try {
       const response = await axios.post(`https://himanshu-dhapola-easby-server.onrender.com/api/v1/cart/empty-cart`,{},
           {
