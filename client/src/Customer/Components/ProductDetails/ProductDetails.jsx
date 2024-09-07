@@ -18,6 +18,10 @@ export default function ProductDetails() {
   const [recommendedProducts, setRecommendedProducts] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
 
+  function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+  }
+
   const handleAddToCart = () => {
     if (!localStorage.getItem("accessToken")) {
       navigate("/login");
