@@ -4,7 +4,13 @@ import {  setOrder, setLoading } from "../Feature/Slices/orderSlice";
 
 export function createOrder({ customerAddress, navigate }) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    const toastId = toast.loading("Loading...", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     dispatch(setLoading(true));
     const token = localStorage?.getItem("accessToken");
     try {
@@ -39,7 +45,13 @@ export function createOrder({ customerAddress, navigate }) {
 }
 
 export async function getAllOrders() {
-  const toastId = toast.loading("Loading...");
+  const toastId = toast.loading("Loading...", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
   let result = {};
   const token = localStorage?.getItem("accessToken");
   try {
@@ -74,7 +86,13 @@ export async function getAllOrders() {
 
 export function getOrderById(orderId) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    const toastId = toast.loading("Loading...", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     dispatch(setLoading(true));
     const token = localStorage?.getItem("accessToken");
     try {
