@@ -6,14 +6,20 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProducts } from "../../../services/productApi";
+import { getOrderHistory } from "../../../services/orderApi";
 
 export default function PageNav() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [values, setValues] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const { customer } = useSelector((state) => state.auth);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
 
   const handleChange = (e) => {
     setValues(() => e.target.value);
@@ -25,6 +31,10 @@ export default function PageNav() {
       setValues("");
     }
   };
+
+  const handleOrderHistory = () => {
+    dispatch(getOrderHistory(navigate))
+  }
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -62,12 +72,19 @@ export default function PageNav() {
       ) {
         closeMenu();
       }
+      if (
+        isDropdownOpen &&
+        !event.target.closest("#dropdown") &&
+        !event.target.closest(".avatar")
+      ) {
+        setIsDropdownOpen(false); // Close the dropdown when clicked outside
+      }
     };
     document.addEventListener("click", handleClickOutside);
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isDropdownOpen]);
 
   return (
     <nav className="flex justify-between font-Poppins py-3 px-4 md:px-10 bg-pearl w-full relative items-center">
@@ -84,13 +101,13 @@ export default function PageNav() {
         />
         <MdOutlineSearch
           onClick={handleSearch}
-          className=" absolute right-0 self-center w-10 sm:w-12 md:w-16 lg:w-20 h-8 sm:h-8 md:h-10 bg-color cursor-pointer p-2 rounded-r-md text-white"
+          className="absolute right-0 self-center w-10 sm:w-12 md:w-16 lg:w-20 h-8 sm:h-8 md:h-10 bg-color cursor-pointer p-2 rounded-r-md text-white"
         />
       </form>
 
       <div className="flex items-center justify-center gap-1 md:hidden">
         {customer !== null ? (
-          <div className="bg-color rounded-full mt-4 text-white font-semibold w-8 h-8 flex justify-center items-center mb-4">
+          <div className="bg-color rounded-full mt-4 text-white font-semibold w-8 h-8 flex justify-center items-center mb-4 avatar">
             <p>{customer?.firstName[0].toUpperCase()}</p>
           </div>
         ) : (
@@ -106,19 +123,37 @@ export default function PageNav() {
       <div className="hidden md:flex gap-4 items-center">
         {customer !== null ? (
           <>
-            <div className="bg-color rounded-full text-white font-semibold w-8 h-8 flex justify-center items-center">
-              <p>{customer.firstName[0].toUpperCase()}</p>
+            <div className="relative">
+              <div
+                className="bg-color rounded-full mt-4 text-white font-semibold w-8 h-8 flex justify-center items-center mb-4 cursor-pointer avatar"
+                onClick={toggleDropdown}
+              >
+                <p>{customer?.firstName[0].toUpperCase()}</p>
+              </div>
+              {isDropdownOpen && (
+                <div
+                  className="absolute z-10 -right-12 top-12 mt-2 w-36 text-center bg-white shadow-lg rounded-lg"
+                  id="dropdown"
+                >
+                  <h3
+                    onClick={handleOrderHistory}
+                    className="font-semibold text-sm uppercase hover:cursor-pointer hover:text-color hover:bg-blue hover:bg-opacity-15 p-2 rounded-lg"
+                  >
+                    Order History
+                  </h3>
+                  <h3
+                    type="submit"
+                    onClick={handleLogout}
+                    className="font-semibold text-sm uppercase hover:cursor-pointer hover:text-color hover:bg-blue hover:bg-opacity-15 p-2 rounded-lg"
+                  >
+                    Logout
+                  </h3>
+                </div>
+              )}
             </div>
             <NavLink to="/cart" className="relative">
               <FaShoppingCart className="w-7 h-7 text-white cursor-pointer hover:text-color transition ease-linear duration-100" />
             </NavLink>
-            <button
-              type="submit"
-              onClick={handleLogout}
-              className="text-white w-16 py-2 rounded-lg text-md font-semibold hover:text-color transition ease-linear duration-100 uppercase"
-            >
-              Logout
-            </button>
           </>
         ) : (
           <div className="space-x-4">
@@ -155,6 +190,12 @@ export default function PageNav() {
               >
                 Cart
               </NavLink>
+              <button
+                onClick={handleOrderHistory}
+                className="relative flex justify-center mb-4 text-white w-full py-2 rounded-lg text-md font-semibold bg-color hover:bg-opacity-80 transition ease-in duration-100 uppercase"
+              >
+                Order History
+              </button>
               <button
                 type="submit"
                 onClick={handleLogout}
