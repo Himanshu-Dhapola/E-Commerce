@@ -32,7 +32,7 @@ export default function ProductCard({ product }) {
         <p className="break-words lg:w-[250px] text-gray">
           {truncateDescription(product.description, 18)}
         </p>
-        <div className="flex px-10 lg:px-2 font-semibold justify-between pt-4">
+        <div className="flex lg:px-2 font-semibold justify-between pt-4">
           <p className="text-black text-sm md:text-base">
             &#8377;{product.discountedPrice}
           </p>
