@@ -8,14 +8,10 @@ const generateAccessAndRefreshToken = async (customerId) => {
     await customer.save({ validateBeforeSave: false });
     return { accessToken };
   } catch (error) {
-    return res
-      .status(500)
-      .json({
-        success: false,
-        message:
-          'Something went wrong while Generating Access Token',
-      });
-      
+    return res.status(500).json({
+      success: false,
+      message: 'Something went wrong while Generating Access Token',
+    });
   }
 };
 
@@ -108,9 +104,7 @@ const loginCustomer = async (req, res) => {
       });
     }
 
-    const { accessToken } = await generateAccessAndRefreshToken(
-      customer._id
-    );
+    const { accessToken } = await generateAccessAndRefreshToken(customer._id);
 
     const loggedInCustomer = await Customer.findById(customer._id).select(
       '-password'
@@ -120,15 +114,12 @@ const loginCustomer = async (req, res) => {
       httpOnly: true,
       secure: true,
     };
-    return res
-      .status(200)
-      .cookie('accessToken', accessToken, options)
-      .json({
-        customer: loggedInCustomer,
-        success: true,
-        message: 'Login Successfull',
-        accessToken,
-      });
+    return res.status(200).cookie('accessToken', accessToken, options).json({
+      customer: loggedInCustomer,
+      success: true,
+      message: 'Login Successfull',
+      accessToken,
+    });
   } catch (error) {
     return res.status(500).json({
       success: false,
@@ -161,8 +152,4 @@ const getUserDetails = async (req, res) => {
   }
 };
 
-export {
-  registerCustomer,
-  loginCustomer,
-  getUserDetails,
-};
+export { registerCustomer, loginCustomer, getUserDetails };
