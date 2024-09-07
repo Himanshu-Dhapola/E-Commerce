@@ -8,6 +8,7 @@ import Login from "../Components/Login/Login";
 import Signup from "../Components/Signup/Signup";
 import Success from "../Components/Payment/Success";
 import Failed from "../Components/Payment/Failed";
+import PrivateRoute from "./PrivateRoutes";
 
 export default function CustomerRoutes() {
   return (
@@ -16,13 +17,41 @@ export default function CustomerRoutes() {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <Cart />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route
+          path="/checkout"
+          element={
+            <PrivateRoute>
+              <Checkout />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route
+          path="/success"
+          element={
+            <PrivateRoute>
+              <Success />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route
+          path="/failed"
+          element={
+            <PrivateRoute>
+              <Failed />
+            </PrivateRoute>
+          }
+        ></Route>
         <Route path="/products/search/:keyword" element={<Product />}></Route>
         <Route path="/products/category/:keyword" element={<Product />}></Route>
         <Route path="/product/:productId" element={<ProductDetails />}></Route>
-        <Route path="/checkout" element={<Checkout />}></Route>
-        <Route path="/success" element={<Success />}></Route>
-        <Route path="/failed" element={<Failed />}></Route>
       </Routes>
     </div>
   );
