@@ -107,7 +107,7 @@ export default function CartItem({ item }) {
             </>
           )}
           {step === "3" && (
-            <span className="border font-semibold px-4 rounded-md text-center">
+            <span className="border text-xs md:text-lg md:ml-8 font-semibold px-2 rounded-md text-center">
               Quantity: {item.quantity}
             </span>
           )}
