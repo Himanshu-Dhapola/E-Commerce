@@ -39,6 +39,12 @@ const customerSchema = new mongoose.Schema(
         ref: 'Address',
       },
     ],
+    orders: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Order',
+      },
+    ],
   },
   { timestamps: true }
 );
