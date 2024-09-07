@@ -75,7 +75,7 @@ export default function CartItem({ item }) {
               {item.product?.brand}
             </span>
           </p>
-          <div className="md:text-base text-[10px] font-semibold tracking-tight flex justify-between space-x-8">
+          <div className="md:text-base  sm:px-5  text-[10px] font-semibold tracking-tight flex justify-between space-x-8">
             <p className="text-black">&#8377;{item.discountedPrice}</p>
             <p className="text-gray line-through">&#8377;{item.price}</p>
             <p className="text-green">
