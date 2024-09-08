@@ -12,7 +12,7 @@ export default function Product() {
       <div>
         <main className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 mt-6">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 text-color">
+            <h1 className="text-4xl uppercase font-bold tracking-tight text-gray-900 text-color">
               Products
             </h1>
           </div>
@@ -20,8 +20,8 @@ export default function Product() {
           <section aria-labelledby="products-heading" className="pb-24 pt-6">
             {products.length === 0 ? (
               <div className="flex justify-center items-center min-h-[50vh]">
-                <p className="text-2xl font-semibold text-gray-600">
-                  No Products Found.
+                <p className="text-2xl uppercase font-semibold text-gray-600">
+                  No Product Found.
                 </p>
               </div>
             ) : (
