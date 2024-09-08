@@ -12,7 +12,7 @@ export default function Product() {
       <div>
         <main className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 mt-6">
-            <h1 className="md:text-4xl md:text-left text-center text-xl uppercase font-bold tracking-tight text-gray-900 text-color">
+            <h1 className="md:text-4xl md:text-left text-center text-2xl uppercase font-bold tracking-tight text-gray-900 text-color">
               Product Catalog
             </h1>
           </div>
