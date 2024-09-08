@@ -54,7 +54,7 @@ export default function Footer() {
         <p className="flex gap-7 relative">
           <div>
             Made by
-            <span className="cursor-pointer" onDoubleClick={handleDoubleClick}>
+            <span className="cursor-pointer select-none" onDoubleClick={handleDoubleClick}>
               {" "}
               Himanshu Dhapola
             </span>
