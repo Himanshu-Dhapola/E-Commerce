@@ -39,7 +39,7 @@ export default function Cart() {
             <div className="w-[150x] h-[150px] md:w-[200px] md:h-[200px]">
               <PiShoppingCartDuotone className="w-full h-full" />
             </div>
-            <p className=" font-Poppins text-color font-semibold text-lg md:text-xl mt-4">
+            <p className=" font-Poppins uppercase text-color font-semibold text-lg md:text-xl mt-4">
               Cart is Empty
             </p>
           </div>
