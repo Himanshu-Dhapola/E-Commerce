@@ -15,7 +15,7 @@ export default function OrderHistory() {
             <OrderHistoryCard item={item} key={index} />
           ))
         ) : (
-          <div className="text-center uppercase text-gray-500 text-xl md:text-3xl mt-5 font-semibold">
+          <div className="text-center uppercase text-black text-xl md:text-3xl mt-5 font-semibold">
             No Orders Placed Yet
           </div>
         )}
