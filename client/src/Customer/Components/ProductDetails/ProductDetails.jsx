@@ -164,7 +164,7 @@ export default function ProductDetails() {
 
       <div className="grid grid-cols-1 bg-smoke gap-y-10 pb-10">
         <div className="lg:col-span-3 w-full">
-          <h1 className="text-2xl md:text-3xl font-bold pt-10 text-center pl-10 my-6 tracking-tight text-color">
+          <h1 className="text-2xl md:text-3xl uppercase font-bold pt-10 text-center pl-10 my-6 tracking-tight text-color">
             Similar Products
           </h1>
           <div className="flex flex-wrap justify-center py-5">
