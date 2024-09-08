@@ -6,7 +6,7 @@ export default function OrderHistory() {
 
   return (
     <div className="bg-smoke min-h-screen font-Poppins py-5">
-      <h1 className="text-center text-color font-bold text-3xl md:text-5xl">
+      <h1 className="text-center uppercase text-color font-bold text-2xl md:text-4xl">
         Order History
       </h1>
       <div>
