@@ -19,7 +19,7 @@ export function registerCustomer(customerData, navigate) {
     dispatch(setLoading(true));
     try {
       const response = await axios.post(
-        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/customer/register`,
+        `https://easby-server.vercel.app/api/v1/customer/register`,
         customerData
       );
 
@@ -62,7 +62,7 @@ export function loginCustomer(loginDetails, navigate) {
     dispatch(setLoading(true));
     try {
       const response = await axios.post(
-        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/customer/login`,
+        `https://easby-server.vercel.app/api/v1/customer/login`,
         loginDetails
       );
 
@@ -112,7 +112,7 @@ export function getCustomerDetails(accessToken, navigate) {
     const token = localStorage?.getItem("accessToken");
     try {
       const response = await axios.get(
-        `https://himanshu-dhapola-easby-server.onrender.com/api/v1/customer/details`,
+        `https://easby-server.vercel.app/api/v1/customer/details`,
         {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
