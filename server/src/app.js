@@ -10,6 +10,7 @@ import adminProductRouter from './routes/adminProduct.routes.js';
 import orderRouter from './routes/customerOrder.routes.js';
 import paymentRouter from './routes/payment.routes.js';
 import orderHistoryRouter from './routes/orderHistory.routes.js';
+import serverless from "serverless-http";
 
 const app = express();
 
@@ -34,6 +35,6 @@ app.use('/api/v1/order', orderRouter);
 app.use('/api/v1/payment', paymentRouter);
 app.use('/api/v1/order_history', orderHistoryRouter);
 
-
-export default app;
+const handler = serverless(app);
+export default handler;
 
