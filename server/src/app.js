@@ -22,8 +22,9 @@ app.use(cookieParser());
 app.get('/', (req, res) => {
   res.send('Root route is working!');
 });
+export default app;
 
-app.use('/api/v1/customer', customerRouter);
+/*app.use('/api/v1/customer', customerRouter);
 app.use('/api/v1/products', customerProductRouter);
 app.use('/api/v1/admin/products', adminProductRouter);
 app.use('/api/v1/cart', cartRouter);
@@ -49,3 +50,4 @@ export default async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+*/
