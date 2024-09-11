@@ -2,15 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { connectDB } from "./db/index.js";
-
-const app = express();
-
-app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
-app.use(express.json({ limit: '64kb' }));
-app.use(express.urlencoded({ extended: true, limit: '16kb' }));
-app.use(express.static('public'));
-app.use(cookieParser());
-
 import customerRouter from './routes/customer.routes.js';
 import cartRouter from './routes/cart.routes.js';
 import cartItemRouter from './routes/cartItem.routes.js';
@@ -20,6 +11,16 @@ import orderRouter from './routes/customerOrder.routes.js';
 import paymentRouter from './routes/payment.routes.js';
 import orderHistoryRouter from './routes/orderHistory.routes.js'
 
+
+const app = express();
+
+app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
+app.use(express.json({ limit: '64kb' }));
+app.use(express.urlencoded({ extended: true, limit: '16kb' }));
+app.use(express.static('public'));
+app.use(cookieParser());
+
+connectDB();
 app.use('/api/v1/customer', customerRouter);
 app.use('/api/v1/products', customerProductRouter);
 app.use('/api/v1/admin/products', adminProductRouter);
@@ -30,6 +31,5 @@ app.use('/api/v1/payment', paymentRouter);
 app.use('/api/v1/order_history', orderHistoryRouter);
 
 export default async function handler(req, res) {
-  await connectDB(); 
   return app(req, res);
 }
