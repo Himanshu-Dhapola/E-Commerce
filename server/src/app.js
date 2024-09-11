@@ -22,6 +22,9 @@ app.use(cors({ origin: "*", credentials: true }));
 app.get('/', (req, res) => {
   res.send('Root route is working!');
 });
+
+app.listen(process.env.PORT, () => console.log("Server ready on port 3000."));
+
 export default app;
 
 /*app.use('/api/v1/customer', customerRouter);
