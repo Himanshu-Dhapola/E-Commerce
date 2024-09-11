@@ -32,12 +32,20 @@ app.use('/api/v1/order', orderRouter);
 app.use('/api/v1/payment', paymentRouter);
 app.use('/api/v1/order_history', orderHistoryRouter);
 
-export default async function handler(req, res) {
+export default async (req, res) => {
   try {
     await connectDB(); 
-    app(req, res); 
+    return new Promise((resolve, reject) => {
+      app(req, res, (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
   } catch (error) {
     console.error('Error handling request:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
-}
+};
