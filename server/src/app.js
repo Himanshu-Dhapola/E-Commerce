@@ -24,7 +24,6 @@ app.get('/', (req, res) => {
   res.send('Root route is working!');
 });
 
-app.listen(process.env.PORT, () => console.log("Server ready on port 3000."));
 
 app.use('/api/v1/customer', customerRouter);
 app.use('/api/v1/products', customerProductRouter);
