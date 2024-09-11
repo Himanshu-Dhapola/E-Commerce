@@ -1,16 +1,15 @@
 import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import { connectDB } from './db/index.js';
-import customerRouter from './routes/customer.routes.js';
-import cartRouter from './routes/cart.routes.js';
-import cartItemRouter from './routes/cartItem.routes.js';
-import customerProductRouter from './routes/customerProduct.routes.js';
-import adminProductRouter from './routes/adminProduct.routes.js';
-import orderRouter from './routes/customerOrder.routes.js';
-import paymentRouter from './routes/payment.routes.js';
-import orderHistoryRouter from './routes/orderHistory.routes.js';
-import serverless from "serverless-http";
+import { connectDB } from '../src/db/index.js';
+import customerRouter from '../src/routes/customer.routes.js';
+import cartRouter from '../src/routes/cart.routes.js';
+import cartItemRouter from '../src/routes/cartItem.routes.js';
+import customerProductRouter from '../src/routes/customerProduct.routes.js';
+import adminProductRouter from '../src/routes/adminProduct.routes.js';
+import orderRouter from '../src/routes/customerOrder.routes.js';
+import paymentRouter from '../src/routes/payment.routes.js';
+import orderHistoryRouter from '../src/routes/orderHistory.routes.js';
 
 const app = express();
 
@@ -24,7 +23,6 @@ app.get('/', (req, res) => {
   res.send('Root route is working!');
 });
 
-
 app.use('/api/v1/customer', customerRouter);
 app.use('/api/v1/products', customerProductRouter);
 app.use('/api/v1/admin/products', adminProductRouter);
@@ -34,6 +32,8 @@ app.use('/api/v1/order', orderRouter);
 app.use('/api/v1/payment', paymentRouter);
 app.use('/api/v1/order_history', orderHistoryRouter);
 
-const handler = serverless(app);
-export default handler;
+export default async function handler(req, res) {
+  await connectDB();
+  return app(req, res);
+};
 
