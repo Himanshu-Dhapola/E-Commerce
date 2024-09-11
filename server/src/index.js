@@ -1,6 +1,8 @@
 import { connectDB } from "./db/index.js";
 import { app } from "./app.js";
 import dotenv from "dotenv";
+import serverless from "serverless-http";
+
 
 connectDB()
   .then(() => {
@@ -12,3 +14,6 @@ connectDB()
   .catch((error) => {
     console.log(`DB Connection Failed!! ${error}`);
   });
+
+const handler = serverless(app);
+export default handler;
