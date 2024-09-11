@@ -20,7 +20,6 @@ app.use(express.urlencoded({ extended: true, limit: '16kb' }));
 app.use(express.static('public'));
 app.use(cookieParser());
 
-connectDB();
 app.use('/api/v1/customer', customerRouter);
 app.use('/api/v1/products', customerProductRouter);
 app.use('/api/v1/admin/products', adminProductRouter);
@@ -31,5 +30,10 @@ app.use('/api/v1/payment', paymentRouter);
 app.use('/api/v1/order_history', orderHistoryRouter);
 
 export default async function handler(req, res) {
-  return app(req, res);
+  try {
+    await connectDB();
+    app(req, res);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 }
