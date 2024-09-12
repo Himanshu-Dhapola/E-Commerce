@@ -45,7 +45,7 @@ export default function ProductDetails() {
     const fetchRecommendations = async () => {
       try {
         const response = await axios.get(
-          `https://himanshu-dhapola-easby-recommendation.onrender.com/recommend/${id.productId}`
+          `https://easby-recommendation-server-fawn.vercel.app//recommend/${id.productId}`
         );
         setRecommendedProducts(response.data);
       } catch (error) {
